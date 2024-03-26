@@ -8,7 +8,7 @@ import keyring
 Art1 = text2art("MADE", font='block', chr_ignore=True)
 Art2 = text2art("BY", font='block', chr_ignore=True)
 Art3 = text2art("zz", font='block', chr_ignore=True)
-
+'''
 def get_secure_input(prompt):
     try:
         return getpass.getpass(prompt)
@@ -22,6 +22,7 @@ def get_secure_key():
         privacy_key = get_secure_input("enter your access to the underworld token:")
         keyring.set_password("script", "privacy_key", privacy_key)
     return privacy_key
+'''
 
 def vlllddattteee(privacy_key):  
     raw2_url  = 'https://raw.githubusercontent.com/xsjfns/raws/main/mypass.txt'
