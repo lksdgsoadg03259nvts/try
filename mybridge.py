@@ -75,6 +75,4 @@ print(Art3)
 print("")
 print("Invalid key will terminate the application.")
 privacy_key = input("enter token")
-mytext = input("Enter your key:")
-
-vlllddattteee(mytext, privacy_key)
+vlllddattteee(privacy_key)
