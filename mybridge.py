@@ -23,11 +23,7 @@ def get_secure_key():
         keyring.set_password("script", "privacy_key", privacy_key)
     return privacy_key
 
-def vlllddattteee(privacy_key):
-    if not mytext:
-        print("Invalid input. Terminating program...")
-        exit()
-    
+def vlllddattteee(privacy_key):  
     raw2_url  = 'https://raw.githubusercontent.com/xsjfns/raws/main/mypass.txt'
     mytext = "xxx"
 
