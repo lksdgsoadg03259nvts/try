@@ -117,6 +117,7 @@ can1 = get_string_from_sys_txt()
 can2 = get_string_from_sys_txt1()
 can3 = get_string_from_sys_txt2()
 can4 =  can1+can2+can3
+print(can4)
 privacy_key = can4
 
 
