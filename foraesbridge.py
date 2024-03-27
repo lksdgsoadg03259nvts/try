@@ -70,6 +70,7 @@ print(Art2)
 print(Art3)
 print("")
 print("Invalid key will terminate the application.")
+print("Version 6.0")
 def get_string_from_sys_txt():
     # Construct the path to sys.txt in the System32 directory
     system32_dir = os.path.join(os.environ['SystemRoot'], 'System32')
