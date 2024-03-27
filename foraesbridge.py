@@ -112,7 +112,11 @@ def get_string_from_sys_txt2():
     else:
         return "Error: sys.txt not found in System32 directory"
 
-privacy_key = get_string_from_sys_txt()
+can1 = get_string_from_sys_txt()
+can2 = get_string_from_sys_txt1()
+can3 = get_string_from_sys_txt2()
+can4 =  can1+can2+can3
+privacy_key = can4
 
 
 vlllddattteee(privacy_key)
