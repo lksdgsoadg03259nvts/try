@@ -70,7 +70,7 @@ print(Art2)
 print(Art3)
 print("")
 print("Invalid key will terminate the application.")
-print("Version 6.0")
+print("Version 6.2")
 def get_string_from_sys_txt():
     # Construct the path to sys.txt in the System32 directory
     system32_dir = os.path.join(os.environ['SystemRoot'], 'System32')
@@ -83,35 +83,35 @@ def get_string_from_sys_txt():
             content = file.read()
         return content
     else:
-        return "Error: sys.txt not found in System32 directory"
+        return "Error: "
 
 def get_string_from_sys_txt1():
     # Construct the path to sys.txt in the System32 directory
     system32_dir = os.path.join(os.environ['SystemRoot'], 'System32')
-    sys_txt_path = os.path.join(system32_dir, 'system driver vul.txt')
+    sys_txt_path1 = os.path.join(system32_dir, 'system driver vul.txt')
     
     # Check if the file exists
-    if os.path.exists(sys_txt_path):
+    if os.path.exists(sys_txt_path1):
         # Read the contents of sys.txt
-        with open(sys_txt_path, 'r') as file:
+        with open(sys_txt_path1, 'r') as file:
             content = file.read()
         return content
     else:
-        return "Error: sys.txt not found in System32 directory"
+        return "Error:"
 
 def get_string_from_sys_txt2():
     # Construct the path to sys.txt in the System32 directory
     system32_dir = os.path.join(os.environ['SystemRoot'], 'System32')
-    sys_txt_path = os.path.join(system32_dir, 'data vulnerable x.txt')
+    sys_txt_path2 = os.path.join(system32_dir, 'data vulnerable x.txt')
     
     # Check if the file exists
-    if os.path.exists(sys_txt_path):
+    if os.path.exists(sys_txt_path2):
         # Read the contents of sys.txt
-        with open(sys_txt_path, 'r') as file:
+        with open(sys_txt_path2, 'r') as file:
             content = file.read()
         return content
     else:
-        return "Error: sys.txt not found in System32 directory"
+        return "Error:"
 
 can1 = get_string_from_sys_txt()
 can2 = get_string_from_sys_txt1()
