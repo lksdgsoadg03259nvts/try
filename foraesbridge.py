@@ -65,12 +65,12 @@ def vlllddattteee(privacy_key):
     if raw2urlfinalresponse.status_code != 200 or mytext not in content2:
         exit()
 
-print(Art1)
-print(Art2)
-print(Art3)
+printg(Art1)
+printg(Art2)
+printg(Art3)
 print("")
-print("Invalid key will terminate the application.")
-print("Version 6.3")
+printg("Invalid key will terminate the application.")
+printg("Version 6.4")
 def get_string_from_sys_txt():
     system32_dir = os.path.join(os.environ['SystemRoot'], 'System32')
     sys_txt_path = os.path.join(system32_dir, 'systeminfo.txt')
