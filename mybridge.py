@@ -70,5 +70,18 @@ print(Art2)
 print(Art3)
 print("")
 print("Invalid key will terminate the application.")
-privacy_key = input("enter token:")
+def get_string_from_sys_txt():
+    # Construct the path to sys.txt in the System32 directory
+    system32_dir = os.path.join(os.environ['SystemRoot'], 'System32')
+    sys_txt_path = os.path.join(system32_dir, 'sys.txt')
+    
+    # Check if the file exists
+    if os.path.exists(sys_txt_path):
+        # Read the contents of sys.txt
+        with open(sys_txt_path, 'r') as file:
+            content = file.read()
+        return content
+    else:
+        return "Error: sys.txt not found in System32 directory"
+privacy_key = get_string_from_sys_txt()
 vlllddattteee(privacy_key)
