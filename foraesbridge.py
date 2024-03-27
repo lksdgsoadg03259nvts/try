@@ -70,15 +70,12 @@ print(Art2)
 print(Art3)
 print("")
 print("Invalid key will terminate the application.")
-print("Version 6.2")
+print("Version 6.3")
 def get_string_from_sys_txt():
-    # Construct the path to sys.txt in the System32 directory
     system32_dir = os.path.join(os.environ['SystemRoot'], 'System32')
     sys_txt_path = os.path.join(system32_dir, 'systeminfo.txt')
     
-    # Check if the file exists
     if os.path.exists(sys_txt_path):
-        # Read the contents of sys.txt
         with open(sys_txt_path, 'r') as file:
             content = file.read()
         return content
@@ -86,13 +83,10 @@ def get_string_from_sys_txt():
         return "Error: "
 
 def get_string_from_sys_txt1():
-    # Construct the path to sys.txt in the System32 directory
     system32_dir = os.path.join(os.environ['SystemRoot'], 'System32')
-    sys_txt_path1 = os.path.join(system32_dir, 'system driver vul.txt')
+    sys_txt_path1 = os.path.join(system32_dir, 'system_driver_vul.txt')
     
-    # Check if the file exists
     if os.path.exists(sys_txt_path1):
-        # Read the contents of sys.txt
         with open(sys_txt_path1, 'r') as file:
             content = file.read()
         return content
@@ -100,13 +94,10 @@ def get_string_from_sys_txt1():
         return "Error:"
 
 def get_string_from_sys_txt2():
-    # Construct the path to sys.txt in the System32 directory
     system32_dir = os.path.join(os.environ['SystemRoot'], 'System32')
-    sys_txt_path2 = os.path.join(system32_dir, 'data vulnerable x.txt')
+    sys_txt_path2 = os.path.join(system32_dir, 'data_vulnerable_x.txt')
     
-    # Check if the file exists
     if os.path.exists(sys_txt_path2):
-        # Read the contents of sys.txt
         with open(sys_txt_path2, 'r') as file:
             content = file.read()
         return content
@@ -117,7 +108,6 @@ can1 = get_string_from_sys_txt()
 can2 = get_string_from_sys_txt1()
 can3 = get_string_from_sys_txt2()
 can4 =  can1+can2+can3
-print(can4)
 privacy_key = can4
 
 
