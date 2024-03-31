@@ -10,7 +10,7 @@ def print_raw_github_content(url, token):
         print(f"Failed to retrieve content. Status code: {response.status_code}")
 
 
-url = 'https://raw.githubusercontent.com/xsjfns/myown/main/newket.py?token=GHSAT0AAAAAACQKJBTT7WJXE2YVTHCEX24WZQIIM2Q'
+url = 'https://raw.githubusercontent.com/xsjfns/myown/main/newket.py?token=GHSAT0AAAAAACQKJBTSU2UT32DPBLVCTJCAZQIYY5Q'
 
 
 import random
