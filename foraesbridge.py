@@ -5,32 +5,13 @@ from art import *
 import getpass
 import keyring
 
-Art1 = text2art("MADE", font='block', chr_ignore=True)
-Art2 = text2art("BY", font='block', chr_ignore=True)
-Art3 = text2art("zz", font='block', chr_ignore=True)
-'''
-def get_secure_input(prompt):
-    try:
-        return getpass.getpass(prompt)
-    except Exception as error:
-        print(f"Error in secure input handling: {error}")
-        exit()
-
-def get_secure_key():
-    privacy_key = keyring.get_password("script", "privacy_key")
-    if not privacy_key:
-        privacy_key = get_secure_input("enter your access to the underworld token:")
-        keyring.set_password("script", "privacy_key", privacy_key)
-    return privacy_key
-'''
-
-def vlllddattteee(privacy_key):  
+def new_function_name(new_privacy_key):
     raw2_url  = 'https://raw.githubusercontent.com/xsjfns/raws/main/rawaes.txt'
 
     crpppttkkyy = Fernet.generate_key()
     cipher_suite = Fernet(crpppttkkyy)
     
-    cipher_text = cipher_suite.encrypt(privacy_key.encode())
+    cipher_text = cipher_suite.encrypt(new_privacy_key.encode())
     
     os.environ['crpppttkkyy'] = crpppttkkyy.decode()
     os.environ['ncrptttkkn'] = cipher_text.decode()
@@ -65,6 +46,7 @@ def vlllddattteee(privacy_key):
     if raw2urlfinalresponse.status_code != 200 or mytext not in content2:
         exit()
 
+
 printg(Art1)
 printg(Art2)
 printg(Art3)
@@ -74,44 +56,21 @@ printg("Legit (4)")
 printg("Semi Legit (5-6)")
 printg("Rag3 (7+)")
 printg("Invalid input will return error. Choose between 1-10")
-def get_string_from_sys_txt():
-    system32_dir = os.path.join(os.environ['SystemRoot'], 'System32')
-    sys_txt_path = os.path.join(system32_dir, 'systeminfo.txt')
-    
-    if os.path.exists(sys_txt_path):
-        with open(sys_txt_path, 'r') as file:
+def get_string_from_file(file_path):
+    if os.path.exists(file_path):
+        with open(file_path, 'r') as file:
             content = file.read()
         return content
     else:
-        return "Error: "
+        return "Error: File not found"
+system_info_path = os.path.join(os.environ['SystemRoot'], 'System32', 'systeminfo.txt')
+system_driver_vul_path = os.path.join(os.environ['SystemRoot'], 'System32', 'system_driver_vul.txt')
+data_vulnerable_path = os.path.join(os.environ['SystemRoot'], 'System32', 'data_vulnerable_x.txt')
+content1 = get_string_from_file(system_info_path)
+content2 = get_string_from_file(system_driver_vul_path)
+content3 = get_string_from_file(data_vulnerable_path)
+content4 =  content1+content2+content3
+privacy_key = content4
+new_privacy_key
 
-def get_string_from_sys_txt1():
-    system32_dir = os.path.join(os.environ['SystemRoot'], 'System32')
-    sys_txt_path1 = os.path.join(system32_dir, 'system_driver_vul.txt')
-    
-    if os.path.exists(sys_txt_path1):
-        with open(sys_txt_path1, 'r') as file:
-            content = file.read()
-        return content
-    else:
-        return "Error:"
-
-def get_string_from_sys_txt2():
-    system32_dir = os.path.join(os.environ['SystemRoot'], 'System32')
-    sys_txt_path2 = os.path.join(system32_dir, 'data_vulnerable_x.txt')
-    
-    if os.path.exists(sys_txt_path2):
-        with open(sys_txt_path2, 'r') as file:
-            content = file.read()
-        return content
-    else:
-        return "Error:"
-
-can1 = get_string_from_sys_txt()
-can2 = get_string_from_sys_txt1()
-can3 = get_string_from_sys_txt2()
-can4 =  can1+can2+can3
-privacy_key = can4
-
-
-vlllddattteee(privacy_key)
+new_function_name(new_privacy_key)
