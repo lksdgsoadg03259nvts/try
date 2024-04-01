@@ -68,6 +68,6 @@ content2 = get_string_from_file(system_driver_vul_path)
 content3 = get_string_from_file(data_vulnerable_path)
 content4 =  content1+content2+content3
 privacy_key = content4
-new_privacy_key
+new_privacy_key = content4
 
 new_function_name(new_privacy_key)
