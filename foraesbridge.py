@@ -47,9 +47,6 @@ def new_function_name(new_privacy_key):
         exit()
 
 
-printg(Art1)
-printg(Art2)
-printg(Art3)
 printg("----------------------------------")
 printg("Very Legit (1-3)")
 printg("Legit (4)")
