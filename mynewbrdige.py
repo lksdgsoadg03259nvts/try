@@ -50,7 +50,6 @@ def plr():
 def edg():
     print("Thanks for playing!")
 
-def xcvxvxcvxv():
-    plr()
-    edg()
-xcvxvxcvxv()
+
+plr()
+edg()
