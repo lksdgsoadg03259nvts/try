@@ -15,12 +15,12 @@ url = 'https://raw.githubusercontent.com/xsjfns/myown/main/newket.py?token=GHSAT
 
 import random
 
-def stg():
-    print("Welcome to the Number Guessing Game!")
-    print("I'm thinking of a number between 1 and 100.")
-    print("Try to guess it in the fewest attempts possible!")
-    print("Let's begin!")
-    print("")
+
+print("Welcome to the Number Guessing Game!")
+print("I'm thinking of a number between 1 and 100.")
+print("Try to guess it in the fewest attempts possible!")
+print("Let's begin!")
+print("")
 
 def plr():
     secret_number = random.randint(1, 100)
@@ -51,7 +51,6 @@ def edg():
     print("Thanks for playing!")
 
 def xcvxvxcvxv():
-    stg()
     plr()
     edg()
 xcvxvxcvxv()
