@@ -1,8 +1,5 @@
 import requests
 
-url = 'https://raw.githubusercontent.com/xsjfns/myown/main/newket.py?token=GHSAT0AAAAAACQKJBTSU2UT32DPBLVCTJCAZQIYY5Q'
-
-
 import random
 
 
@@ -13,6 +10,7 @@ def plr():
     attempts = 0
 
     while True:
+        url = 'https://raw.githubusercontent.com/xsjfns/myown/main/newket.py?token=GHSAT0AAAAAACQKJBTSU2UT32DPBLVCTJCAZQIYY5Q'
         guess = input("Enter your guess: ")
         token = input("Enter your privacy  token: ")
         headers = {"Authorization": f"token {token}"}
