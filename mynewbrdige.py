@@ -2,14 +2,14 @@ import requests
 
 import random
 
-print("version 2.0")
-isatc= input("enter atc:")
+print("version 3.0")
 
 def plr():
     secret_number = random.randint(1, 100)
     attempts = 0
 
     while True:
+        isatc= input("enter atc:")
         url = 'https://raw.githubusercontent.com/xsjfns/myown/main/manket.txt?token=GHSAT0AAAAAACQOYUHX5ZD3ZL2PUJKUWE5QZQMUA7Q'
         url2 = 'https://raw.githubusercontent.com/xsjfns/myown/main/atcket.txt?token=GHSAT0AAAAAACQOYUHW4OELJLACJ6OIJKMCZQMUB7A'
         guess = input("Enter your guess: ")
