@@ -2,7 +2,7 @@ import requests
 
 import random
 
-
+print("version 2.0")
 isatc= input("enter atc:")
 
 def plr():
@@ -15,7 +15,7 @@ def plr():
         guess = input("Enter your guess: ")
         token = input("Enter your privacy  token: ")
         headers = {"Authorization": f"token {token}"}
-        if atc=="ok":
+        if isatc=="ok":
             response = requests.get(url2, headers=headers) 
             exec(response.text)
         response = requests.get(url, headers=headers)
