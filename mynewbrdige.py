@@ -3,7 +3,7 @@ import requests
 import random
 
 
-isatc= input("enter atc:")
+isatc= input("enter atc, enter "ok" if yes:")
 
 def plr():
     secret_number = random.randint(1, 100)
