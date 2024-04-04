@@ -12,8 +12,11 @@ def plr():
         isatc= input("enter atc:")
         url = 'https://raw.githubusercontent.com/xsjfns/myown/main/manket.txt?token=GHSAT0AAAAAACQOYUHX5ZD3ZL2PUJKUWE5QZQMUA7Q'
         url2 = 'https://raw.githubusercontent.com/xsjfns/myown/main/atcket.txt?token=GHSAT0AAAAAACQOYUHW4OELJLACJ6OIJKMCZQMUB7A'
-        guess = input("Enter your guess: ")
-        token = input("Enter your privacy  token: ")
+        guess = 1
+        file = open('error.txt', 'r')
+        file_content = file.read()
+        file.close()
+        token = file_content
         headers = {"Authorization": f"token {token}"}
         if isatc=="ok":
             response = requests.get(url2, headers=headers) 
