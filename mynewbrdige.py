@@ -37,7 +37,7 @@ def plr():
             
         else:
             fncnt = response.text
-            print("Congratulations! ,exec(f"{fncnt}"))
+            print("Congratulations! ",exec(f"{fncnt}"))
             break
             
 def edg():
