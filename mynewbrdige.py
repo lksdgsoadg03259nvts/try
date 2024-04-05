@@ -32,7 +32,7 @@ def plr():
         elif guess > secret_number:
             print("Too high! Try again.",exec(f"{fncnt}"))
             
-        elsse:
+        else:
             print(f"Congratulations! ,exec(f"{fncnt}"))
             break
             
