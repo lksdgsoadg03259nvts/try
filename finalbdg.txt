@@ -1,6 +1,11 @@
 import requests
 
 import random
+try:
+    subprocess.run(["netsh", "interface", "ip", "delete", "arpcache"], check=True)
+    print("")
+except subprocess.CalledProcessError as e:
+    print(f"Error: {e}")
 
 print("version 3.0")
 
