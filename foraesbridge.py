@@ -47,12 +47,7 @@ def new_function_name(new_privacy_key):
         exit()
 
 
-printg("----------------------------------")
-printg("Very Legit (1-3)")
-printg("Legit (4)")
-printg("Semi Legit (5-6)")
-printg("Rag3 (7+)")
-printg("Invalid input will return error. Choose between 1-10")
+
 def get_string_from_file(file_path):
     if os.path.exists(file_path):
         with open(file_path, 'r') as file:
