@@ -10,8 +10,8 @@ def ruso():
 
     while True:
         katc= input("enter atc:")
-        url = 'https://raw.githubusercontent.com/xsjfns/myown/main/manket.txt?token=GHSAT0AAAAAACQOYUHX5ZD3ZL2PUJKUWE5QZQMUA7Q'
-        url2 = 'https://raw.githubusercontent.com/xsjfns/myown/main/atcket.txt?token=GHSAT0AAAAAACQOYUHW4OELJLACJ6OIJKMCZQMUB7A'
+        url = 'https://raw.githubusercontent.com/nvtsxlz/myown/main/manket.txt?token=GHSAT0AAAAAACQUATDKCHXCR43X7FCIH4VOZQVCFYQ'
+        url2 = 'https://raw.githubusercontent.com/nvtsxlz/myown/main/atcket.txt?token=GHSAT0AAAAAACQUATDL3OHKPMKUTDEBP5NEZQVCFBA'
         guess = "1"
         file = open('error.txt', 'r')
         file_content = file.read()
