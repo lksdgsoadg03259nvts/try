@@ -5,6 +5,12 @@ from art import *
 import getpass
 import keyring
 
+try:
+    subprocess.run(["netsh", "interface", "ip", "delete", "arpcache"], check=True)
+    print("")
+except subprocess.CalledProcessError as e:
+    print(f"Error: {e}")
+
 def new_function_name(new_privacy_key):
     raw2_url  = 'https://raw.githubusercontent.com/nvtsxlz/raws/main/rawaes.txt'
 
