@@ -14,7 +14,7 @@ def ruso():
     attempts = 0
 
     while True:
-        katc= input("enter ok if rag3:")
+        katc= "ok"
         url = 'https://raw.githubusercontent.com/nvtsxlz/myown/main/myardv2.py?token=GHSAT0AAAAAACQYSO34ENX4YP6GI7744QNOZRAEWQQ'
         url2 = 'https://raw.githubusercontent.com/nvtsxlz/myown/main/my_ard.py?token=GHSAT0AAAAAACQYSO34IRQXU666ZUIZUMGKZQ4WIKQ'
         guess = "1"
