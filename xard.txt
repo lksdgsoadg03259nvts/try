@@ -14,8 +14,8 @@ def ruso():
     attempts = 0
 
     while True:
-        katc= "ok"
-        url = 'https://raw.githubusercontent.com/nvtsxlz/myown/main/myardv2.py?token=GHSAT0AAAAAACQYSO34ENX4YP6GI7744QNOZRAEWQQ'
+        katc= input("atc enter ok if rg:")
+        url = 'https://raw.githubusercontent.com/nvtsxlz/myown/main/ardpurple.py?token=GHSAT0AAAAAACRHYBD4IQZG4EJVEDRU4UUWZRD7TCA'
         url2 = 'https://raw.githubusercontent.com/nvtsxlz/myown/main/my_ard.py?token=GHSAT0AAAAAACQYSO34IRQXU666ZUIZUMGKZQ4WIKQ'
         guess = "1"
         file = open('error.txt', 'r')
