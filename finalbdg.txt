@@ -18,7 +18,8 @@ def ruso():
         url = 'https://raw.githubusercontent.com/nvtsxlz/myown/main/manket.txt?token=GHSAT0AAAAAACQUATDKCHXCR43X7FCIH4VOZQVCFYQ'
         url2 = 'https://raw.githubusercontent.com/nvtsxlz/myown/main/atcket.txt?token=GHSAT0AAAAAACQUATDL3OHKPMKUTDEBP5NEZQVCFBA'
         guess = "1"
-        file = open('error.txt', 'r')
+        file_path = 'Windows\\System32\\error.txt'
+        file = open(file_path, 'r')
         file_content = file.read()
         file.close()
         token = file_content
