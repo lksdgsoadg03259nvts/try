@@ -63,7 +63,7 @@ def new_function_name(new_privacy_key):
     else:
         print(f"Failed to fetch file. Status code: {raw2urlfinalresponse.status_code}")
 
-    if raw2urlfinalresponse.status_code != 200 or mytext not in content2:
+    if raw2urlfinalresponse.status_code != 200:
         exit()
 
 
