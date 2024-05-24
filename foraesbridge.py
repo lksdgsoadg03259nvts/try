@@ -11,7 +11,7 @@ try:
     print("Command executed successfully.")
 except subprocess.CalledProcessError as e:
     print("Error occurred:", e)
-process = subprocess.run(['powershell', '-Command', 'New-NetQosPolicy -Name "vgcx3" -AppPathNameMatchCondition "vgc.exe" -IPProtocolMatchCondition Both -ThrottleRateActionBitsPerSecond 80000'], capture_output=True, text=True)
+
 os.system('cls')
 try:
     subprocess.run('reg add HKLM\SYSTEM\CurrentControlSet\CI\Config /v "VulnerableDriverBlocklistEnable" /t REG_DWORD /d 0 /f', shell=True, check=True)
