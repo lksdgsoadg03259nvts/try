@@ -15,7 +15,7 @@ def is_valorant_running():
 if is_valorant_running():
     os.system('cls')
     mylogo()
-    printg("---ERROR. Please close Valor4nt first before you open the cheat.")
+    printg("---ERROR. Please close Valor4nt first before you open the AES Software.")
     printg("---This is for your own safety.")
     show_message_box("ERROR. Please close Valor4nt first before you open the cheat.", "Error", MB_OK | ICON_ERROR)
     exit()
