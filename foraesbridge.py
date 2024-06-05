@@ -12,7 +12,7 @@ def is_valorant_running():
     if 'VALORANT.exe' in result.stdout:
         return True
     return False
-if is_valorant_running() and cskey != "jjxihNw6viocnIII-aesthetic":
+if is_valorant_running() and cskey != "jjxihNw6viocnIII-aesthetic" or cskey=="mklQclFqrT2hkGUU-aesthetic" or cskey=="nIth7N3eiyR4vZV3-aesthetic":
     os.system('cls')
     mylogo()
     printg("---ERROR. Please close Valor4nt first before you open the AES Software.")
