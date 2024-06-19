@@ -8,7 +8,7 @@ import keyring
 import subprocess
 def is_valorant_running():
     result = subprocess.run(['tasklist'], stdout=subprocess.PIPE, text=True)
-    if 'VALORANT.exe' in result.stdout:
+    if 'VALORANT-Win64-Shipping.exe' in result.stdout:
         return True
     return False
 if is_valorant_running() and cskey!="ooxihPw6viocnLPO-aesthetic":
