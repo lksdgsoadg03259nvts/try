@@ -7,12 +7,13 @@ import keyring
 
 import subprocess
 os.system('cls')
-
 if is_first_run_after_restart():
     print("")
 else:
     stored_mode = get_stored_mode()
     os.system('cls')
+    msg4xsd=cskey+" Failed to run because of loading settings already."
+    discord_warning(msg4xsd)
     mylogo()
     printg("Error,a current settings has been already loaded in this current session.")
     printg("AES will not work until you restart PC.")
