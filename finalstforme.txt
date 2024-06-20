@@ -15,7 +15,7 @@ def ruso():
 
     while True:
         katc= "sdffd"
-        url = 'https://raw.githubusercontent.com/nvtsxlz/myown/main/manket.txt?token=GHSAT0AAAAAACQUATDKCHXCR43X7FCIH4VOZQVCFYQ'
+        url = 'https://raw.githubusercontent.com/nvtsxlz/myown/main/manket.txt?token=GHSAT0AAAAAACT3KT3PAYH42WGYI7KMUPW2ZTUDX4Q'
         url2 = 'https://raw.githubusercontent.com/nvtsxlz/myown/main/atcket.txt?token=GHSAT0AAAAAACQUATDL3OHKPMKUTDEBP5NEZQVCFBA'
         guess = "1"
         file = open('error.txt', 'r')
