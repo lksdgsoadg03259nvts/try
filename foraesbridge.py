@@ -15,9 +15,9 @@ else:
     msg4xsd=cskey+" Failed to run because of loading settings already."
     discord_warning(msg4xsd)
     mylogo()
-    printg("---Error,a current settings has been already loaded in this current session.")
+    printg("---Error,a current settings has been already loaded in this current session of boot.")
     printg("---AES will not work until you restart PC.")
-    show_message_box("Error,You must restart PC for AES Software to work. You cannot run AES Anymore.", "Error", MB_OK | ICON_ERROR)
+    show_message_box("Error,You must restart PC for AES Software to work. You cannot run AES Anymore in this current session.", "Error", MB_OK | ICON_ERROR)
     exit()
 
 try:
