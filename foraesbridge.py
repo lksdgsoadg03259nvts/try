@@ -6,6 +6,18 @@ import getpass
 import keyring
 
 import subprocess
+os.system('cls')
+
+if is_first_run_after_restart():
+    print("")
+else:
+    stored_mode = get_stored_mode()
+    os.system('cls')
+    mylogo()
+    printg("Error,a current settings has been already loaded in this current session.")
+    printg("AES will not work until you restart PC.")
+    show_message_box("Error,You must restart first to change mode. For more info, contact dev.", "Error", MB_OK | ICON_ERROR)
+    exit()
 
 try:
     subprocess.run('reg add "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f', shell=True, check=True)
