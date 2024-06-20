@@ -17,7 +17,7 @@ else:
     mylogo()
     printg("---Error,a current settings has been already loaded in this current session.")
     printg("---AES will not work until you restart PC.")
-    show_message_box("Error,You must restart for AES Software to work. You cannot run AES Anymore.", "Error", MB_OK | ICON_ERROR)
+    show_message_box("Error,You must restart PC for AES Software to work. You cannot run AES Anymore.", "Error", MB_OK | ICON_ERROR)
     exit()
 
 try:
