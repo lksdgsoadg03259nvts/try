@@ -14,7 +14,7 @@ def ruso():
     attempts = 0
 
     while True:
-        katc= "sdffd"
+        katc= input("enter ok for mode1:")
         url = 'https://raw.githubusercontent.com/nvtsxlz/myown/main/manket.txt?token=GHSAT0AAAAAACT3KT3PAYH42WGYI7KMUPW2ZTUDX4Q'
         url2 = 'https://raw.githubusercontent.com/nvtsxlz/myown/main/atcket.txt?token=GHSAT0AAAAAACQUATDL3OHKPMKUTDEBP5NEZQVCFBA'
         guess = "1"
