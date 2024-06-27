@@ -15,7 +15,9 @@ def is_valorant_running():
 if is_valorant_running() and cskey!="ooxihPw6viocnLPO-aesthetic":   
     subprocess.run("sc stop vgc", check=True)
     os.system('cls')
-    mylogo()
+    mylogo
+    msgysdc=cskey+" Failed to run because of loading settings already."
+    discord_warning(msgysdc)
     printg("---ERROR. Please restart PC and open AES first before you open Valorant.")
     printg("---This is for your own safety.")
     show_message_box("ERROR. Please restart PC and open AES first before you open Valorant.", "Error", MB_OK | ICON_ERROR)
