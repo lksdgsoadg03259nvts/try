@@ -18,9 +18,9 @@ if is_valorant_running() and cskey!="ooxihPw6viocnLPO-aesthetic":
     mylogo
     msgysdc=cskey+" Failed to run because of loading settings already."
     discord_warning(msgysdc)
-    printg("---ERROR. Please restart PC and open AES first before you open Valorant.")
+    printg("---ERROR. Please run AES first before you open Valorant.")
     printg("---This is for your own safety.")
-    show_message_box("ERROR. Please restart PC and open AES first before you open Valorant.", "Error", MB_OK | ICON_ERROR)
+    show_message_box("ERROR. Please run AES first before you open Valorant.", "Error", MB_OK | ICON_ERROR)
     exit()
 else:
     print("")
