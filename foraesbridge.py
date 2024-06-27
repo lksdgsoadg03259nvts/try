@@ -7,6 +7,21 @@ import keyring
 
 import subprocess
 os.system('cls')
+def is_valorant_running():
+    result = subprocess.run(['tasklist'], stdout=subprocess.PIPE, text=True)
+    if 'vgc.exe' in result.stdout:
+        return True
+    return False
+if is_valorant_running() and cskey!="ooxihPw6viocnLPO-aesthetic":
+    os.system('cls')
+    mylogo()
+    printg("---ERROR. Please close Valor4nt first before you open the AES Software.")
+    printg("---This is for your own safety.")
+    show_message_box("ERROR. Please close Valor4nt first before you open the AES Software.", "Error", MB_OK | ICON_ERROR)
+    exit()
+else:
+    print("")
+os.system('cls')
 if is_first_run_after_restart():
     print("")
 else:
