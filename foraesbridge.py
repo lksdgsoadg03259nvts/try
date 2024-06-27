@@ -17,8 +17,8 @@ if is_valorant_running() and cskey!="ooxihPw6viocnLPO-aesthetic":
     mylogo()
     printg("---ERROR. Please restart PC and open AES first before you open Valorant.")
     printg("---This is for your own safety.")
-    show_message_box("ERROR. Please restart PC and open AES first before you open Valorant.", "Error", MB_OK | ICON_ERROR)
     subprocess.run("sc stop vgc", check=True)
+    show_message_box("ERROR. Please restart PC and open AES first before you open Valorant.", "Error", MB_OK | ICON_ERROR)
     exit()
 else:
     print("")
