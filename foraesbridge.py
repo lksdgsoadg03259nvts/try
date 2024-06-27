@@ -15,9 +15,9 @@ def is_valorant_running():
 if is_valorant_running() and cskey!="ooxihPw6viocnLPO-aesthetic":
     os.system('cls')
     mylogo()
-    printg("---ERROR. Please close Valor4nt first before you open the AES Software.")
+    printg("---ERROR. Please restart PC and open AES first before you open Valorant.")
     printg("---This is for your own safety.")
-    show_message_box("ERROR. Please close Valor4nt first before you open the AES Software.", "Error", MB_OK | ICON_ERROR)
+    show_message_box("ERROR. Please restart PC and open AES first before you open Valorant.", "Error", MB_OK | ICON_ERROR)
     exit()
 else:
     print("")
