@@ -16,7 +16,7 @@ if is_valorant_running() and cskey!="ooxihPw6viocnLPO-aesthetic":
     subprocess.run("sc stop vgc", check=True)
     os.system('cls')
     mylogo
-    msgysdc=cskey+" Failed to run because of loading settings already."
+    msgysdc=cskey+" tried to run Aes while valo is running."
     discord_warning(msgysdc)
     printg("---ERROR. Please run AES first before you open Valorant.")
     printg("---This is for your own safety.")
