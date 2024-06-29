@@ -13,13 +13,13 @@ def is_valorant_running():
         return True
     return False
 if is_valorant_running():   
-    subprocess.run("sc stop vgc", check=True)
     os.system('cls')
     mylogo
     msgysdc=cskey+" tried to run Aes while valo is running."
     discord_warning(msgysdc)
     printg("---ERROR. Please run AES first before you open Valorant.")
     printg("---This is for your own safety.")
+    printg("---If error persists, restart PC.")
     show_message_box("ERROR. Please run AES first before you open Valorant.", "Error", MB_OK | ICON_ERROR)
     exit()
 else:
