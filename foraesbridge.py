@@ -12,7 +12,7 @@ def is_valorant_running():
     if 'vgc.exe' in result.stdout:
         return True
     return False
-if is_valorant_running() and cskey!="ooxihPw6viocnLPO-aesthetic":   
+if is_valorant_running():   
     subprocess.run("sc stop vgc", check=True)
     os.system('cls')
     mylogo
