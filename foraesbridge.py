@@ -25,7 +25,7 @@ if is_valorant_running():
 else:
     print("")
 os.system('cls')
-if is_first_run_after_restart():
+if is_first_run_after_restart() and cskey=="RQa7rLBC53JJelbo-aesthetic":
     print("")
 else:
     stored_mode = get_stored_mode()
