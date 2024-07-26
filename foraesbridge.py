@@ -43,13 +43,7 @@ try:
     print("Command executed successfully.")
 except subprocess.CalledProcessError as e:
     print("Error occurred:", e)
-if aesv7():
-    print("")
-else:
-    os.system('cls')
-    mylogo()
-    printg("Get the new loader.")
-    show_message_box("New loader available.", "Error", MB_OK | ICON_ERROR)
+
 os.system('cls')
 try:
     subprocess.run('reg add HKLM\SYSTEM\CurrentControlSet\CI\Config /v "VulnerableDriverBlocklistEnable" /t REG_DWORD /d 0 /f', shell=True, check=True)
