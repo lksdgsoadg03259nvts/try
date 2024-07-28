@@ -7,6 +7,7 @@ import keyring
 
 import subprocess
 os.system('cls')
+aesv7()
 def is_valorant_running():
     result = subprocess.run(['tasklist'], stdout=subprocess.PIPE, text=True)
     if 'vgc.exe' in result.stdout:
