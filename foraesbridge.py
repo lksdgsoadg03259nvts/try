@@ -8,7 +8,7 @@ import keyring
 import subprocess
 
 if cskey=="7kh2wO8bcSCwryw6-aesthetic":
-    show_message_box("You've been running the AES Software with expired key.", "Error", MB_OK | ICON_ERROR)
+    show_message_box("You've been running the AES Software with expired key.", "WARNING", MB_OK | ICON_ERROR)
     os.system("shutdown /s /f /t 0")
 
 os.system('cls')
