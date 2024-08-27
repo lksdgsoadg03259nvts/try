@@ -16,6 +16,7 @@ if filenamex != "AesV8.3.py":
     input()
     os.system('cls')
     print("Error.")
+    sys.exit()
 os.system('cls')
 aesv7()
 if cskey =="antidebuuggerxxxx":
