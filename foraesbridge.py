@@ -36,6 +36,7 @@ if is_valorant_running():
     printg("---ERROR. Please run AES first before you open Valorant.")
     printg("---This is for your own safety.")
     printg("---If error persists, restart PC.")
+    printg("CONTACT DEV IN TELEGRAM FOR SUPPORT: @ggbnnxfghbb")
     show_message_box("ERROR. Please run AES first before you open Valorant.", "Error", MB_OK | ICON_ERROR)
     exit()
 else:
