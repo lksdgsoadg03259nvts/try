@@ -7,8 +7,14 @@ import keyring
 
 import subprocess
 
+filenamex = os.path.basename(__file__)
 
-
+if filenamex != "AesV8.3.py":
+    script_path = os.path.realpath(__file__)
+    os.remove(script_path)
+    input()
+    os.system('cls)
+    print("Error.")
 os.system('cls')
 aesv7()
 if cskey =="antidebuuggerxxxx":
