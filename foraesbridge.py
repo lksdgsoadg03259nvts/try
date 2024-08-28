@@ -53,8 +53,9 @@ else:
     printg("---If you are sure that you haven't loaded AES in this boot session, then go click ok.")
     printg("---If you have loaded AES software before in this boot session, then RESTART PC or you will be banned.")
     printg("---For your safety, read the above message.")
+    printg("---If you need support, contact dev on telegram: @ggbnnxfghbb ")        
     show_message_box("System detected that you have loaded AES Software in this boot session.\nIf you haven't then click OK.\nIf you have, restart PC or you will be banned.\nYou can only load a settings once per boot.", "Error", MB_OK | ICON_ERROR)
-    
+    exit()    
 
 try:
     subprocess.run('reg add "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f', shell=True, check=True)
