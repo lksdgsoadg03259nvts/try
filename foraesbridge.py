@@ -9,7 +9,7 @@ import subprocess
 
 filenamex = os.path.basename(__file__)
 #discord_warning(filenamex)
-if filenamex != "AesV8.3.py":
+if filenamex != "AesV8.4.py":
     os.system('cls')
     script_path = os.path.realpath(__file__)
     os.remove(script_path)
