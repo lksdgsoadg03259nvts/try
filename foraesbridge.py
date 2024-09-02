@@ -59,8 +59,7 @@ else:
     printg("---RESTART PC or you will be banned.")
     printg("---RESTART PC or you will be banned.")
     printg("---RESTART PC or you will be banned.")
-    printg("---For your safety, read the above message.")
-    printg("---If you need support, contact dev on telegram: @ggbnnxfghbb ")        
+    printg("---For your safety, read the above message.")      
     show_message_box("You need to restart your PC for AES Software to work.", "Error", MB_OK | ICON_ERROR)
     exit()    
 
