@@ -9,15 +9,19 @@ import subprocess
 os.system('cls')
 def create_file_in_system32(filename, content=''):
     system32_path = r'C:\Windows\System32'
-    file_path = os.path.join(system32_path, filename)
+    file_path = os.path.join(system32_path, filename)  
+    if os.path.exists(file_path):
+        mylogo()
+        printg(f'please wait a moment')
+        return
     try:
         with open(file_path, 'w') as file:
             file.write(content)
-        print(f'please wait a moment')
+        mylogo()
     except PermissionError:
         print("")
     except Exception as e:
-        print(f'')
+        print(f'An error occurred: {e}')
 create_file_in_system32('mydr.sys', 'sadfasdfasdfasdfasdfasdfasdfdsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
 create_file_in_system32('mydrsdf.sys', 'sadfasdfasdfasdfasdfasdfasdfdsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
 create_file_in_system32('mydrvrs.sys', 'sadfasdfasdfasdfasdfasdfasdfdsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
