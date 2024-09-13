@@ -9,7 +9,8 @@ import subprocess
 import os
 os.system('cls')
 mylogo()
-printg('please wait a moment')
+printg("please wait a moment")
+printg("AES is verifying your system.")
 def create_file_in_system32(filename, content=''):
     system32_path = r'C:\Windows\System32'
     file_path = os.path.join(system32_path, filename)  
