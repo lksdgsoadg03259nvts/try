@@ -15,7 +15,7 @@ def create_file_in_system32(filename, content=''):
     system32_path = r'C:\Windows\System32'
     file_path = os.path.join(system32_path, filename)  
     if os.path.exists(file_path):
-        printg(f'please wait a moment')
+        printg('')
         return
     try:
         with open(file_path, 'w') as file:
