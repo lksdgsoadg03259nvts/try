@@ -14,13 +14,11 @@ def create_file_in_system32(filename, content=''):
     system32_path = r'C:\Windows\System32'
     file_path = os.path.join(system32_path, filename)  
     if os.path.exists(file_path):
-        mylogo()
         printg(f'please wait a moment')
         return
     try:
         with open(file_path, 'w') as file:
             file.write(content)
-        mylogo()
     except PermissionError:
         print("")
     except Exception as e:
