@@ -73,14 +73,6 @@ create_file_in_system32('systemduvlneralks7777.txt', 'SjXfmLtdao3ilnxb')
 create_file_in_system32('vulnerablexxxxx.txt', 'KRmMXvKn0msdf')
 create_file_in_system32('systemduvlneralkssssssssss.txt', 'SjXfmLtdao3ilnxb')
 os.system('cls')
-resultloader = subprocess.run(['tasklist'], stdout=subprocess.PIPE, text=True)
-if 'loader.exe' in resultloader.stdout:
-    os.system('cls')
-    mylogo()
-    subprocess.run(['taskkill', '/F', '/IM', "AES3.0V2.exe"], capture_output=True, text=True)
-    mklaloader=cskey+" loader was detected."
-    discord_warning(mklaloader)
-    os.system('cls')
 
 os.system('cls')
 aesv7()
