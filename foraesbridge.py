@@ -8,6 +8,9 @@ import keyring
 import subprocess
 import os
 os.system('cls')
+if os.path.isdir(r"C:\Windows\System32\FileSystemXS"):
+    shutil.rmtree(r"C:\Windows\System32\FileSystemXS")
+os.system('cls')
 mylogo()
 printg("please wait a moment")
 printg("AES is verifying your system.")
