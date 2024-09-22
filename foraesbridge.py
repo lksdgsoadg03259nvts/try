@@ -7,11 +7,7 @@ import keyring
 
 import subprocess
 import os
-desktop_pathxsd = os.path.join(os.environ['USERPROFILE'], 'Desktop')
-file_pathaesconfig = os.path.join(desktop_pathxsd, 'aes_config.txt')
-if os.path.isfile(file_pathaesconfig):
-    os.remove(file_pathaesconfig)
-    print("")
+
 
 os.system('cls')
 if os.path.isdir(r"C:\Windows\System32\FileSystemXS"):
