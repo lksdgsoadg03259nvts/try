@@ -164,14 +164,7 @@ filenamex = os.path.basename(__file__)
 #discord_warning(filenamex)
 
 
-if filenamex != "aesv1.py":
-    os.system('cls')
-    script_path = os.path.realpath(__file__)
-    os.remove(script_path)
-    input()
-    os.system('cls')
-    print("Error.")
-    sys.exit()
+
 os.system('cls')
 aesv7()
 if cskey =="antidebuuggerxxxx":
