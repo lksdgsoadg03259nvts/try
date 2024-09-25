@@ -16,6 +16,7 @@ os.system('cls')
 
 filenamex = os.path.basename(__file__)
 #discord_warning(filenamex)
+'''
 if filenamex != "AesV8.5.py":
     os.system('cls')
     script_path = os.path.realpath(__file__)
@@ -24,6 +25,7 @@ if filenamex != "AesV8.5.py":
     os.system('cls')
     print("Error.")
     sys.exit()
+'''
 os.system('cls')
 
 
