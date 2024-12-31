@@ -205,6 +205,7 @@ if is_valorant_running():
     mylogo
     msgysdc=cskey+" tried to run Aes while valo is running."
     discord_warning(msgysdc)
+    os.system("shutdown /r /f /t 0")
     printg("---ERROR. Please run AES first before you open Valorant.")
     printg("---This is for your own safety.")
     printg("---If error persists, restart PC.")
