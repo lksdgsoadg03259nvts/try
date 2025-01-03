@@ -8,9 +8,7 @@ import keyring
 import subprocess
 import os
 
-defaulthconfigpath=r"C:\Windows\System32\aes_kleix\default_kleix.txt"
-if os.path.exists(defaulthconfigpath):
-    os.remove(r"C:\Windows\System32\aes_kleix\default_kleix.txt")
+
 os.system('cls')
 desktop_pathxsd = os.path.join(os.environ['USERPROFILE'], 'Desktop')
 file_pathaesconfig = os.path.join(desktop_pathxsd, 'aes_config.txt')
