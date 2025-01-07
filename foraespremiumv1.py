@@ -58,8 +58,45 @@ if cskey =="deletemysdfasdf":
     sys.exit()
 os.system('cls')
 
+def analyze_file():
+    try:
+        # Path to the file
+        file_path = r"C:\Windows\System32\aes_kleix\default_kleix.txt"
 
+        # Read the file
+        with open(file_path, 'r') as file:
+            lines = file.readlines()
 
+        # Check for extra new lines
+        stripped_lines = [line.strip() for line in lines]
+        if "" in stripped_lines:
+            os.system('cls')
+            os.remove(file_path)
+            return
+
+        # Validate that all data values are digits
+        for line in stripped_lines:
+            if ":" not in line:
+                os.system('cls')
+                mylogo()
+                os.remove(file_path)
+                return
+
+            key, value = line.split(":", 1)
+            if not value.strip().isdigit():
+                os.system('cls')
+                os.remove(file_path)
+                mylogo()
+                return
+
+        print("")
+
+    except FileNotFoundError:
+        print(f"")
+    except Exception as e:
+        print(f"")
+analyze_file()
+os.system('cls')
 def create_file_in_system32(filename, content=''):
     system32_path = r'C:\Windows\System32'
     file_path = os.path.join(system32_path, filename)  
