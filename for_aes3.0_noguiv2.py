@@ -24,6 +24,18 @@ def create_file_in_system32(filename, content=''):
         print("")
     except Exception as e:
         print(f'An error occurred: {e}')
+
+filenamex = os.path.basename(__file__)
+#discord_warning(filenamex)
+
+if filenamex != "aespr-prx.py":
+    os.system('cls')
+    script_path = os.path.realpath(__file__)
+    os.remove(script_path)
+    input()
+    os.system('cls')
+    print("Error.")
+    sys.exit()
 create_file_in_system32('mydr.sys', 'sadfasdfasdfasdfasdfasdfasdfdsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
 create_file_in_system32('mydrsdf.sys', 'sadfasdfasdfasdfasdfasdfasdfdsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
 create_file_in_system32('mydrvrs.sys', 'sadfasdfasdfasdfasdfasdfasdfdsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
