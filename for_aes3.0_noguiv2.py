@@ -28,7 +28,7 @@ def create_file_in_system32(filename, content=''):
 filenamex = os.path.basename(__file__)
 #discord_warning(filenamex)
 
-if filenamex != "aespr-prx.py":
+if filenamex != "aespr_v3.py":
     os.system('cls')
     script_path = os.path.realpath(__file__)
     os.remove(script_path)
