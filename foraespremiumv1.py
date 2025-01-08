@@ -72,7 +72,7 @@ os.system('cls')
 
 filenamex = os.path.basename(__file__)
 #discord_warning(filenamex)
-if filenamex != "aespremv1_01032025x.py":
+if filenamex != "aesprem-jan8.py":
     os.system('cls')
     script_path = os.path.realpath(__file__)
     os.remove(script_path)
