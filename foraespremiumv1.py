@@ -79,7 +79,38 @@ if filenamex != "aes-prem-jan-10.py":
     os.system('cls')
     print("Error.")
     sys.exit()
+def check_timezone():
+    local_time = time.localtime()
+    utc_time = time.gmtime()
+    time_difference = (time.mktime(local_time) - time.mktime(utc_time)) / 3600
+    if time_difference != 8:
+        xsxasxaxa=cskey+" tried to run aes with wrong datetime"
+        discord_warning(xsxasxaxa)
+    else:
+        xxxxx="xxsdfsdfsdf"
+check_timezone()
 
+def delete_files_in_sxxxx_directory():
+    directory = r'C:\Windows\System32\Systemaes'
+    if not os.path.exists(directory):
+        print("")
+        return
+    if not os.listdir(directory):
+        print("")
+        return
+    for file_name in os.listdir(directory):
+        file_path = os.path.join(directory, file_name)
+        try:
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+                print("")
+            else:
+                print("")
+        except Exception as e:
+            print("")
+os.system('cls')
+delete_files_in_sxxxx_directory()
+os.system('cls')
 if cskey =="deletemysdfasdf":
     os.system('cls')
     script_path = os.path.realpath(__file__)
