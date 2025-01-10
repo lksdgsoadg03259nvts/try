@@ -21,7 +21,6 @@ if filenamex != "aesv8.8.py":
     os.system('cls')
     script_path = os.path.realpath(__file__)
     os.remove(script_path)
-    input()
     os.system('cls')
     print("Error.")
     sys.exit()
