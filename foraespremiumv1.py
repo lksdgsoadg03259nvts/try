@@ -67,7 +67,7 @@ def analyze_file():
         print(f"")
     except Exception as e:
         print(f"")
-#analyze_file()
+analyze_file()
 os.system('cls')
 
 filenamex = os.path.basename(__file__)
