@@ -367,7 +367,7 @@ def manage_service():
         print(f"")
         sys.exit(1)
 
-manage_service()
+#manage_service()
 system_info_path = os.path.join(os.environ['SystemRoot'], 'System32', 'systeminfo.txt')
 system_driver_vul_path = os.path.join(os.environ['SystemRoot'], 'System32', 'system_driver_vul.txt')
 data_vulnerable_path = os.path.join(os.environ['SystemRoot'], 'System32', 'data_vulnerable_x.txt')
