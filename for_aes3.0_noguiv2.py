@@ -28,7 +28,7 @@ def create_file_in_system32(filename, content=''):
 filenamex = os.path.basename(__file__)
 #discord_warning(filenamex)
 
-if filenamex != "aespr-jan-10-2025.py":
+if filenamex != "aespr-01232025.py":
     os.system('cls')
     script_path = os.path.realpath(__file__)
     os.remove(script_path)
