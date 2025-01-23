@@ -35,6 +35,39 @@ if filenamex != "aespr-01232025.py":
     os.system('cls')
     print("Error.")
     sys.exit()
+def analyze_file():
+    try:
+        # Path to the file
+        file_path = r"C:\Windows\System32\prprprconfigs\default_kleix.txt"
+        # Read the file
+        with open(file_path, 'r') as file:
+            lines = file.readlines()
+        # Check for extra new lines
+        stripped_lines = [line.strip() for line in lines]
+        if "" in stripped_lines:
+            os.system('cls')
+            os.remove(file_path)
+            return
+        # Validate that all data values are digits
+        for line in stripped_lines:
+            if ":" not in line:
+                os.system('cls')
+                mylogo()
+                os.remove(file_path)
+                return
+
+            key, value = line.split(":", 1)
+            if not value.strip().isdigit():
+                os.system('cls')
+                os.remove(file_path)
+                mylogo()
+                return
+        print("")
+    except FileNotFoundError:
+        print(f"")
+    except Exception as e:
+        print(f"")
+analyze_file()
 create_file_in_system32('mydr.sys', 'sadfasdfasdfasdfasdfasdfasdfdsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
 create_file_in_system32('mydrsdf.sys', 'sadfasdfasdfasdfasdfasdfasdfdsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
 create_file_in_system32('mydrvrs.sys', 'sadfasdfasdfasdfasdfasdfasdfdsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
