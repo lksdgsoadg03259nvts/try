@@ -72,7 +72,7 @@ os.system('cls')
 
 filenamex = os.path.basename(__file__)
 #discord_warning(filenamex)
-if filenamex != "aes-prem-jan-10.py":
+if filenamex != "premx_myself.py":
     os.system('cls')
     script_path = os.path.realpath(__file__)
     os.remove(script_path)
