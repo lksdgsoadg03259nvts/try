@@ -138,7 +138,7 @@ def delete_files_if_not_marked(target_folder, marker_file):
                 f.write("completed.")
             print(f"")
         except Exception as e:
-            print(f"}")
+            print(f"")
     else:
         print("")
 
