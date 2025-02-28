@@ -142,7 +142,7 @@ def delete_files_if_not_marked(target_folder, marker_file):
     else:
         print("")
 
-delete_files_if_not_marked(r"C:\\Windows\\System32\\aes_kleix", r"C:\\Windows\\System32\\deleted_configs_part341234.txt")
+delete_files_if_not_marked(r"C:\\Windows\\System32\\aes_kleix", r"C:\\Windows\\System32\\deleted_configs_part676767.txt")
 
 os.system('cls')
 if cskey =="deletemysdfasdf":
