@@ -94,7 +94,157 @@ if cskey =="deletemysdfasdf":
     print("Error.")
     sys.exit()
 os.system('cls')
+class SliderApp(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.load_default_values()
+        self.initUI()
 
+    def initUI(self):
+        self.setWindowTitle('PremX Configuration')
+        self.setFixedSize(550, 760)
+        self.center()
+        layout = QVBoxLayout()
+        layout.setSpacing(15)
+        self.setStyleSheet("""
+            QWidget {
+                background-color: #121212;
+                color: white;
+                font-family: Arial;
+            }
+            QLabel {
+                font-size: 16px;
+            }
+            QSlider::groove:horizontal {
+                height: 8px;
+                background: #444;
+                border-radius: 4px;
+            }
+            QSlider::handle:horizontal {
+                background: #ffcc00;
+                width: 18px;
+                height: 18px;
+                border-radius: 9px;
+                margin: -5px;
+            }
+            QComboBox {
+                background-color: #222;
+                padding: 7px;
+                border: 1px solid #ffcc00;
+                border-radius: 5px;
+            }
+            QPushButton {
+                background-color: #ffcc00;
+                color: black;
+                font-size: 16px;
+                border-radius: 8px;
+                padding: 10px;
+            }
+            QPushButton:hover {
+                background-color: #ffd633;
+            }
+        """)
+
+        layout.addLayout(self.create_slider('x', 1, 15, 'X:', selected_values['x']))
+        layout.addLayout(self.create_slider('y', 1, 7, 'Y:', selected_values['y']))
+        layout.addLayout(self.create_slider('FOV', 25, 90, 'FOV:', selected_values['FOV']))
+        layout.addLayout(self.create_slider('offset', 5, 15, 'Offset:', selected_values['offset']))
+
+        layout.addWidget(self.create_combo_box('color', 'Select Color:', ['Yellow', 'Purple', 'Red']))
+        layout.addWidget(self.create_combo_box('mode', 'Mode:', ['Mode 1', 'Mode 2']))
+        layout.addWidget(self.create_combo_box('ignore_deadbody', 'Ignore DeadBody:', ['Yes', 'No']))
+        layout.addWidget(self.create_combo_box('smoothing', 'Smoothing:', ['Ultimate Rage', 'Rage', 'Semi-Legit', 'Legit']))
+        layout.addWidget(self.create_combo_box('triggerbot', 'Triggerbot:', ['Disable', 'SHIFT key', 'ALT key', 'CAPSLOCK key', 'Mouse 4 key', 'Mouse 5 key'], self.toggle_triggerbot_settings))
+
+        self.trigger_settings_group = QGroupBox("TRIGGERB0T Settings")
+        self.trigger_settings_layout = QVBoxLayout()
+        self.trigger_settings_layout.addLayout(self.create_slider('trigger_delay_before', 1, 1000, 'Delay Before(ms):', selected_values['trigger_delay_before']))
+        self.trigger_settings_layout.addLayout(self.create_slider('trigger_delay_after', 1, 1000, 'Delay After(ms):', selected_values['trigger_delay_after']))
+        self.trigger_settings_layout.addLayout(self.create_slider('trigger_spray_time', 1, 1000, 'Spray Time(ms):', selected_values['trigger_spray_time']))
+        self.trigger_settings_group.setLayout(self.trigger_settings_layout)
+        layout.addWidget(self.trigger_settings_group)
+        self.toggle_triggerbot_settings()
+
+        self.button = QPushButton('Next', self)
+        self.button.clicked.connect(self.nextClicked)
+        layout.addWidget(self.button)
+        self.setLayout(layout)
+
+    def create_slider(self, key, min_val, max_val, label_text, default_value):
+        hbox = QHBoxLayout()
+        label = QLabel(f'{label_text}', self)
+        slider = QSlider(Qt.Horizontal, self)
+        slider.setMinimum(min_val)
+        slider.setMaximum(max_val)
+        slider.setValue(default_value)
+        slider.setTickInterval(1)
+        slider.valueChanged.connect(lambda value: self.update_value(key, value))
+
+        value_label = QLabel(f'{default_value}', self)
+        slider.valueChanged.connect(lambda value: value_label.setText(str(value)))
+
+        hbox.addWidget(label)
+        hbox.addWidget(slider)
+        hbox.addWidget(value_label)
+        return hbox
+
+    def create_combo_box(self, key, label_text, options, callback=None):
+        container = QWidget()
+        layout = QVBoxLayout(container)
+        label = QLabel(label_text)
+        combo = QComboBox()
+        combo.addItems(options)
+        combo.setCurrentText(selected_values[key])
+        if callback:
+            combo.currentIndexChanged.connect(lambda index: callback(combo.currentText()))
+        else:
+            combo.currentIndexChanged.connect(lambda: self.update_combo_value(key, combo.currentText()))
+        layout.addWidget(label)
+        layout.addWidget(combo)
+        return container
+
+    def update_value(self, key, value):
+        selected_values[key] = value
+
+    def update_combo_value(self, key, value):
+        selected_values[key] = value
+
+    def toggle_triggerbot_settings(self, value=None):
+        if value:
+            selected_values['triggerbot'] = value
+        self.trigger_settings_group.setVisible(selected_values['triggerbot'] != 'Disable')
+
+    def nextClicked(self):
+        self.save_to_txt()
+        self.close()
+
+    def save_to_txt(self):
+        file_path = r'C:\Windows\System32\premx_config_03x.txt'
+        with open(file_path, 'w') as txt_file:
+            for key, value in selected_values.items():
+                txt_file.write(f"{key}: {value}\n")
+        print("Configuration saved.")
+
+    def load_default_values(self):
+        file_path = r'C:\Windows\System32\premx_config_03x.txt'
+        if os.path.exists(file_path):
+            with open(file_path, 'r') as txt_file:
+                for line in txt_file:
+                    key, value = line.strip().split(': ')
+                    if key in ['x', 'y', 'FOV', 'offset', 'trigger_delay_before', 'trigger_delay_after', 'trigger_spray_time']:
+                        selected_values[key] = int(value)
+                    else:
+                        selected_values[key] = value
+
+    def center(self):
+        screen_geometry = QApplication.primaryScreen().availableGeometry()
+        self.move(screen_geometry.center() - self.rect().center())
+
+
+app = QApplication(sys.argv)
+window = SliderApp()
+window.show()
+app.exec_()
 
 os.system('cls')
 def create_file_in_system32(filename, content=''):
