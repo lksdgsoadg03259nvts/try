@@ -106,7 +106,7 @@ class SliderApp(QWidget):
 
     def initUI(self):
         self.setWindowTitle('PremX Configuration')
-        self.setFixedSize(550, 750)
+        self.setFixedSize(550, 760)
         self.center()
         layout = QVBoxLayout()
         layout.setSpacing(15)
@@ -117,7 +117,7 @@ class SliderApp(QWidget):
                 font-family: Arial;
             }
             QLabel {
-                font-size: 14px;
+                font-size: 16px;
             }
             QSlider::groove:horizontal {
                 height: 8px;
@@ -133,7 +133,7 @@ class SliderApp(QWidget):
             }
             QComboBox {
                 background-color: #222;
-                padding: 5px;
+                padding: 7px;
                 border: 1px solid #ffcc00;
                 border-radius: 5px;
             }
