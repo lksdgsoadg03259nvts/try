@@ -82,6 +82,7 @@ def delete_files_if_not_marked(target_folder, marker_file):
         print("")
 
 delete_files_if_not_marked(r"C:\\Windows\\System32\\aes_kleix", r"C:\\Windows\\System32\\deleted_configs_part676767.txt")
+os.system('cls')
 selected_values = {
     'x': 6,
     'y': 4,
@@ -104,7 +105,7 @@ class SliderApp(QWidget):
         self.initUI()
 
     def initUI(self):
-        self.setWindowTitle('AES PREMIUM')
+        self.setWindowTitle('PremX Configuration')
         self.setFixedSize(500, 700)
         self.center()
         layout = QVBoxLayout()
@@ -201,7 +202,7 @@ class SliderApp(QWidget):
         self.close()
 
     def save_to_txt(self):
-        file_path = r'C:\Windows\System32\aes_config.txt'
+        file_path = r'C:\Windows\System32\premx_config_03x.txt'
         try:
             with open(file_path, 'w') as txt_file:
                 for key, value in selected_values.items():
@@ -213,7 +214,7 @@ class SliderApp(QWidget):
             print(f"Error saving file: {e}")
 
     def load_default_values(self):
-        file_path = r'C:\Windows\System32\aes_config.txt'
+        file_path = r'C:\Windows\System32\premx_config_03x.txt'
         if os.path.exists(file_path):
             with open(file_path, 'r') as txt_file:
                 for line in txt_file:
@@ -235,9 +236,7 @@ app.exec_()
 
 
 os.system('cls')
-print("success here")
-input()
-exit()
+
 if cskey =="deletemysdfasdf":
     os.system('cls')
     script_path = os.path.realpath(__file__)
