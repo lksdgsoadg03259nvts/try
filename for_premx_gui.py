@@ -231,7 +231,7 @@ class SliderApp(QWidget):
 app = QApplication(sys.argv)
 window = SliderApp()
 window.show()
-sys.exit(app.exec_())
+app.exec_()
 
 
 os.system('cls')
