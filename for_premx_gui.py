@@ -82,7 +82,7 @@ def delete_files_if_not_marked(target_folder, marker_file):
         print("")
 
 delete_files_if_not_marked(r"C:\\Windows\\System32\\aes_kleix", r"C:\\Windows\\System32\\deleted_configs_part676767.txt")
-
+selected_values = {
     'x': 6,
     'y': 4,
     'FOV': 33,
