@@ -83,7 +83,161 @@ def delete_files_if_not_marked(target_folder, marker_file):
 
 delete_files_if_not_marked(r"C:\\Windows\\System32\\aes_kleix", r"C:\\Windows\\System32\\deleted_configs_part676767.txt")
 
+    'x': 6,
+    'y': 4,
+    'FOV': 33,
+    'offset': 8,
+    'color': 'Yellow',
+    'mode': 'Mode 1',
+    'ignore_deadbody': 'No',
+    'smoothing': 'Legit',
+    'triggerbot': 'Disable',
+    'trigger_delay_before': 1,
+    'trigger_delay_after': 1,
+    'trigger_spray_time': 1
+}
+
+class SliderApp(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.load_default_values()
+        self.initUI()
+
+    def initUI(self):
+        self.setWindowTitle('AES PREMIUM')
+        self.setFixedSize(500, 700)
+        self.center()
+        layout = QVBoxLayout()
+        layout.setSpacing(10)
+
+        layout.addLayout(self.create_slider('x', 1, 15, 'X:', selected_values['x']))
+        layout.addLayout(self.create_slider('y', 1, 15, 'Y:', selected_values['y']))
+        layout.addLayout(self.create_slider('FOV', 25, 45, 'FOV:', selected_values['FOV']))
+        layout.addLayout(self.create_slider('offset', 1, 15, 'Offset:', selected_values['offset']))
+
+        layout.addWidget(self.create_combo_box('color', 'Select Color:', ['Yellow', 'Purple', 'Red']))
+        layout.addWidget(self.create_combo_box('mode', 'Mode:', ['Mode 1', 'Mode 2']))
+        layout.addWidget(self.create_combo_box('ignore_deadbody', 'Ignore DeadBody:', ['Yes', 'No']))
+        layout.addWidget(self.create_combo_box('smoothing', 'Smoothing:', ['Ultimate Rage', 'Rage', 'Semi-Legit', 'Legit']))
+        layout.addWidget(self.create_combo_box('triggerbot', 'Triggerbot:', ['Disable', 'SHIFT key', 'ALT key', 'CAPSLOCK key', 'Mouse 4 key', 'Mouse 5 key'], self.toggle_triggerbot_settings))
+
+        self.trigger_settings_group = QGroupBox("Triggerbot Settings")
+        self.trigger_settings_layout = QVBoxLayout()
+        self.trigger_settings_layout.addLayout(self.create_slider('trigger_delay_before', 1, 1000, 'Delay Before:', selected_values['trigger_delay_before']))
+        self.trigger_settings_layout.addLayout(self.create_slider('trigger_delay_after', 1, 1000, 'Delay After:', selected_values['trigger_delay_after']))
+        self.trigger_settings_layout.addLayout(self.create_slider('trigger_spray_time', 1, 1000, 'Spray Time:', selected_values['trigger_spray_time']))
+        self.trigger_settings_group.setLayout(self.trigger_settings_layout)
+        layout.addWidget(self.trigger_settings_group)
+        self.toggle_triggerbot_settings()
+
+        self.button = QPushButton('Next', self)
+        self.button.setFont(QFont('Arial', 12))
+        self.button.clicked.connect(self.nextClicked)
+        layout.addWidget(self.button)
+        self.setLayout(layout)
+        palette = self.palette()
+        palette.setColor(QPalette.Window, QColor("#1C1C1C"))
+        self.setPalette(palette)
+
+    def create_slider(self, key, min_val, max_val, label_text, default_value):
+        hbox = QHBoxLayout()
+        label = QLabel(f'{label_text}', self)
+        label.setFont(QFont('Arial', 12))
+        label.setStyleSheet("color: white;")
+
+        slider = QSlider(Qt.Horizontal, self)
+        slider.setMinimum(min_val)
+        slider.setMaximum(max_val)
+        slider.setValue(default_value)
+        slider.setTickInterval(1)
+        slider.valueChanged.connect(lambda value: self.update_value(key, value))
+
+        value_label = QLabel(f'{default_value}', self)
+        value_label.setFont(QFont('Arial', 12))
+        value_label.setStyleSheet("color: yellow;")
+        slider.valueChanged.connect(lambda value: value_label.setText(str(value)))
+
+        hbox.addWidget(label)
+        hbox.addWidget(slider)
+        hbox.addWidget(value_label)
+        return hbox
+
+    def create_combo_box(self, key, label_text, options, callback=None):
+        container = QWidget()
+        layout = QVBoxLayout(container)
+
+        label = QLabel(label_text)
+        label.setFont(QFont('Arial', 12))
+        label.setStyleSheet("color: white;")
+        layout.addWidget(label)
+
+        combo = QComboBox()
+        combo.setFont(QFont('Arial', 12))
+        combo.addItems(options)
+        combo.setCurrentText(selected_values[key])
+
+        if callback:
+            combo.currentIndexChanged.connect(lambda index: callback(combo.currentText()))
+        else:
+            combo.currentIndexChanged.connect(lambda: self.update_combo_value(key, combo.currentText()))
+
+        layout.addWidget(combo)
+        container.setLayout(layout)
+        return container
+
+    def update_value(self, key, value):
+        selected_values[key] = value
+
+    def update_combo_value(self, key, value):
+        selected_values[key] = value
+
+    def toggle_triggerbot_settings(self, value=None):
+        if value:  
+            selected_values['triggerbot'] = value  # Update selected value before checking
+        self.trigger_settings_group.setVisible(selected_values['triggerbot'] != 'Disable')
+
+    def nextClicked(self):
+        self.save_to_txt()
+        self.close()
+
+    def save_to_txt(self):
+        file_path = r'C:\Windows\System32\aes_config.txt'
+        try:
+            with open(file_path, 'w') as txt_file:
+                for key, value in selected_values.items():
+                    txt_file.write(f"{key}: {value}\n")
+            print("Saved values:")
+            with open(file_path, 'r') as txt_file:
+                print(txt_file.read())  # Read and print file content
+        except Exception as e:
+            print(f"Error saving file: {e}")
+
+    def load_default_values(self):
+        file_path = r'C:\Windows\System32\aes_config.txt'
+        if os.path.exists(file_path):
+            with open(file_path, 'r') as txt_file:
+                for line in txt_file:
+                    key, value = line.strip().split(': ')
+                    if key in ['x', 'y', 'FOV', 'offset', 'trigger_delay_before', 'trigger_delay_after', 'trigger_spray_time']:
+                        selected_values[key] = int(value)
+                    else:
+                        selected_values[key] = value
+
+    def center(self):
+        screen_geometry = QApplication.primaryScreen().availableGeometry()
+        self.move(screen_geometry.center() - self.rect().center())
+
+
+app = QApplication(sys.argv)
+window = SliderApp()
+window.show()
+sys.exit(app.exec_())
+
+
 os.system('cls')
+print("success here")
+input()
+exit()
 if cskey =="deletemysdfasdf":
     os.system('cls')
     script_path = os.path.realpath(__file__)
