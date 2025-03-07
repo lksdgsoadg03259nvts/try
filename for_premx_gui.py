@@ -11,6 +11,22 @@ os.system('cls')
 
 filenamex = os.path.basename(__file__)
 #discord_warning(filenamex)
+import os
+
+def delete_filex(file_path):
+    try:
+        os.remove(file_path)
+        print(f"Deleted: {file_path}")
+    except PermissionError:
+        print("Permission denied. Try running as administrator.")
+    except FileNotFoundError:
+        print("File not found.")
+    except Exception as e:
+        print(f"Error: {e}")
+
+# Example usage
+delete_filex(r"C:\Windows\System32\premx_config_03x.txt")
+os.system('cls')
 if filenamex != "premx_gui.py":
     os.system('cls')
     script_path = os.path.realpath(__file__)
