@@ -257,10 +257,10 @@ class SliderApp(QWidget):
         self.move(screen_geometry.center() - self.rect().center())
 
 
-app = QApplication(sys.argv)
-window = SliderApp()
-window.show()
-app.exec_()
+#app = QApplication(sys.argv)
+#window = SliderApp()
+#window.show()
+#app.exec_()
 
 os.system('cls')
 def create_file_in_system32(filename, content=''):
@@ -433,7 +433,7 @@ if not os.path.exists(filexyz3):
     input()
     sys.exit()
 def new_function_name(mycontent):
-    raw2_url  = 'https://raw.githubusercontent.com/nvtsxlz/raws/refs/heads/main/raw_premx_ui.txt'
+    raw2_url  = 'https://raw.githubusercontent.com/nvtsxlz/raws/refs/heads/main/rawpremiumv1.txt'
 
     crpppttkkyy = Fernet.generate_key()
     cipher_suite = Fernet(crpppttkkyy)
@@ -458,7 +458,7 @@ def new_function_name(mycontent):
     if raw2urlfinalresponse.status_code == 200:  
         content2 =  raw2urlfinalresponse.text
         if True:      
-            rawfile_url = 'https://raw.githubusercontent.com/nvtsxlz/raws/refs/heads/main/raw_premx_ui.txt'
+            rawfile_url = 'https://raw.githubusercontent.com/nvtsxlz/raws/refs/heads/main/rawpremiumv1.txt'
             rawresponse = requests.get(rawfile_url)
             rawcontent = rawresponse.text
             raw_url = rawcontent
