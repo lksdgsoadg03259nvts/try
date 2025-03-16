@@ -72,6 +72,8 @@ os.system('cls')
 
 filenamex = os.path.basename(__file__)
 #discord_warning(filenamex)
+
+'''
 if filenamex != "aes-prem-jan-10.py":
     os.system('cls')
     script_path = os.path.realpath(__file__)
@@ -79,6 +81,8 @@ if filenamex != "aes-prem-jan-10.py":
     os.system('cls')
     print("Error.")
     sys.exit()
+'''
+
 def check_timezone():
     local_time = time.localtime()
     utc_time = time.gmtime()
