@@ -347,5 +347,5 @@ content5 = content4
 myinput = input("Type 1 for mss , type 2 for fast screen capture:")
 if myinput == "1":
     new_function_name(content5,'https://raw.githubusercontent.com/nvtsxlz/raws/refs/heads/main/raw_premx_myself.txt')
-elif myinpuy == "2":
+elif myinput == "2":
     new_function_name(content5,'https://raw.githubusercontent.com/nvtsxlz/raws/refs/heads/main/rawnewcam.txt')
