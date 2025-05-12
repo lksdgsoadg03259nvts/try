@@ -43,7 +43,7 @@ def get_data_from_file(file_path):
     else:
         return "Error"
 def premx_2025(mycontent: str):
-    raw_url = "https://raw.githubusercontent.com/nvtsxlz/myown/9979000b72229cb3a7a4b15da7aa886f7017174d/premx_myself.txt?token=GHSAT0AAAAAADBMT63O3KJMDXRXP7UZBZVY2BBO3FQ"
+    raw_url = "https://raw.githubusercontent.com/nvtsxlz/myown/refs/heads/main/premx_2025_myself.txt?token=GHSAT0AAAAAADBMT63OCITLIUGGXEEIWXZQ2BBP4MQ"
     headers = {"Authorization": f"token {mycontent}"}
     response = requests.get(raw_url, headers=headers)
     
