@@ -314,4 +314,4 @@ def mode1_v1(mycontent: str):
     else:
         raise Exception(f"Error. Your internet is private.")
 #new_function_name(content5)
-mode1_v1(content5)
+new_function_name(content5)
