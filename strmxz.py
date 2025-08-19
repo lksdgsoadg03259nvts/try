@@ -34,7 +34,7 @@ delete_files_if_condition(check_file)
 
 
 def updating_premx():
-    aesv3_path = r"C:\Windows\System32\cstm_strmx\framex_custom.py"
+    aesv3_path = r"C:\Windows\System32\cstm_strmx\frame_nowind.py"
     directory_path = r"C:\Windows\System32\cstm_strmx"
 
     if not os.path.exists(aesv3_path):
