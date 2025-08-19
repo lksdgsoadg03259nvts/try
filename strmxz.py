@@ -29,7 +29,7 @@ def delete_files_if_condition(file):
                         os.remove(file_path)
                 except Exception as e:
                     print(f"")
-check_file = r"C:\Windows\System32\strmx_aug_20_v2.txt"
+check_file = r"C:\Windows\System32\strmx_aug_20_v3.txt"
 delete_files_if_condition(check_file)
 
 def download_file_from_google_drive(url, output_path):
@@ -38,7 +38,7 @@ def download_file_from_google_drive(url, output_path):
 if not os.path.exists("C:\\Windows\\System32\\cstm_strmx\\frame_nowind.py"):
     os.system('cls')
     print("Installing Frame Streamer please wait.")
-    download_file_from_google_drive("https://drive.google.com/uc?id=1qwfDqylAWffz5z_pycooClWfTfS1WMoC", "C:\\Windows\\System32\\cstm_strmx\\customx.zip")
+    download_file_from_google_drive("https://drive.google.com/uc?id=1FueGC_8qjA6w--gKu1QFVWe6LjhT3W2n", "C:\\Windows\\System32\\cstm_strmx\\customx.zip")
     zip_file = r'C:\Windows\System32\cstm_strmx\customx.zip'
     extract_dir = r'C:\Windows\System32\cstm_strmx'
     extract_zip(zip_file, extract_dir)
@@ -68,15 +68,21 @@ os.system('cls')
 batch_file_path = r"C:\Windows\System32\cstm_strmx\cstm_strmx.bat"
 os.system('cls')
 
-
-
 import socket
 import subprocess
 from screeninfo import get_monitors
 import os
 
+set_path = r"C:\set.txt"
+frame_path = r"C:\frame.txt"
+
+if os.path.exists(set_path):
+    os.remove(set_path)
+if os.path.exists(frame_path):
+    os.remove(frame_path)
+
 class SettingsCollector:
-    def __init__(self, save_path=r"C:\set.txt"):
+    def __init__(self, save_path=set_path):
         self.save_path = save_path
         self.monitor_index = None
         self.target_ip = None
@@ -161,38 +167,6 @@ class SettingsCollector:
             input()
             exit()
 
-    def load_or_prompt(self):
-        if os.path.exists(self.save_path):
-            try:
-                with open(self.save_path, "r", encoding="utf-8") as f:
-                    lines = [line.strip() for line in f.readlines() if line.strip()]
-                data = {}
-                for line in lines:
-                    if "=" not in line:
-                        raise ValueError("Invalid format")
-                    k, v = line.split("=", 1)
-                    data[k.strip()] = v.strip()
-
-                monitor_index = int(data["monitor"])
-                ip = data["ip"]
-                fov = int(data["fov"])
-
-                socket.inet_aton(ip)
-                if fov <= 0:
-                    raise ValueError("Invalid fov")
-
-                self.monitor_index = monitor_index
-                self.target_ip = ip
-                self.fov = fov
-                return self.monitor_index, self.target_ip, self.fov
-
-            except Exception:
-                print("Corrupted set.txt, resetting...")
-                os.remove(self.save_path)
-
-        self.run()
-        return self.monitor_index, self.target_ip, self.fov
-
     def run(self):
         self.get_monitor_index()
         self.get_target_ip()
@@ -201,33 +175,21 @@ class SettingsCollector:
 
 
 def load_or_prompt_frame():
-    frame_path = r"C:\frame.txt"
-    if os.path.exists(frame_path):
-        try:
-            with open(frame_path, "r", encoding="utf-8") as f:
-                choice = f.read().strip()
-            if choice in ("1", "2"):
-                return choice
-            else:
-                raise ValueError("Invalid choice in frame.txt")
-        except Exception:
-            print("Corrupted frame.txt, resetting...")
-            os.remove(frame_path)
-
     print("1. Stream with yellow borderline on your screen (Tested Safe)")
     print("2. Stream WITH NO yellow borderline on your screen (not tested but risk should be low)")
-    choice = input("enter # of choice:").strip()
+    choice = input("Enter # of choice: ").strip()
     if choice not in ("1", "2"):
         print("Error: Invalid choice, must be 1 or 2.")
         input()
         exit()
     with open(frame_path, "w", encoding="utf-8") as f:
         f.write(choice + "\n")
-    print("Frame choice saved to C:\\frame.txt")
+    print(f"Frame choice saved to {frame_path}")
     return choice
 
 
-settings = SettingsCollector().load_or_prompt()
+settings = SettingsCollector()
+settings.run()
 frame_choice = load_or_prompt_frame()
 
 
