@@ -97,12 +97,17 @@ class SettingsCollector:
         self.save_path = save_path
         self.monitor_index = None
         self.target_ip = None
-        self.screensize = None
+        self.fov = None
 
     def get_monitor_index(self):
         monitors = get_monitors()
+        if len(monitors) == 1:
+            self.monitor_index = 1
+            print("Only one monitor detected. Using monitor = 1")
+            return
+
         print("Available monitors:")
-        for i, m in enumerate(monitors):
+        for i, m in enumerate(monitors, start=1):
             print(f"{i}: {m.width}x{m.height} @ {m.x},{m.y}")
 
         try:
@@ -112,7 +117,7 @@ class SettingsCollector:
             input()
             exit()
 
-        if idx < 0 or idx >= len(monitors):
+        if idx < 1 or idx > len(monitors):
             print("Error: Invalid monitor index.")
             input()
             exit()
@@ -146,25 +151,27 @@ class SettingsCollector:
 
         self.target_ip = ip
 
-    def get_screensize(self):
+    def get_fov(self):
         try:
-            s = int(input("Enter screensize: "))
+            s = int(input("Enter fov: "))
         except ValueError:
-            print("Error: screensize must be an integer.")
+            print("Error: fov must be an integer.")
             input()
             exit()
 
         if s <= 0:
-            print("Error: screensize must be greater than 0.")
+            print("Error: fov must be greater than 0.")
             input()
             exit()
 
-        self.screensize = s
+        self.fov = s
 
     def save_settings(self):
         try:
             with open(self.save_path, "w", encoding="utf-8") as f:
-                f.write(f"{self.monitor_index}\n{self.target_ip}\n{self.screensize}\n")
+                f.write(f"monitor = {self.monitor_index}\n")
+                f.write(f"ip = {self.target_ip}\n")
+                f.write(f"fov = {self.fov}\n")
             print(f"Settings saved to {self.save_path}")
         except Exception as e:
             print(f"Error: Failed to save settings. {e}")
@@ -176,33 +183,39 @@ class SettingsCollector:
             try:
                 with open(self.save_path, "r", encoding="utf-8") as f:
                     lines = [line.strip() for line in f.readlines() if line.strip()]
-                if len(lines) != 3:
-                    raise ValueError("Invalid number of lines")
+                data = {}
+                for line in lines:
+                    if "=" not in line:
+                        raise ValueError("Invalid format")
+                    k, v = line.split("=", 1)
+                    data[k.strip()] = v.strip()
 
-                monitor_index = int(lines[0])
-                ip = lines[1]
-                screensize = int(lines[2])
+                monitor_index = int(data["monitor"])
+                ip = data["ip"]
+                fov = int(data["fov"])
 
                 socket.inet_aton(ip)
-                if screensize <= 0:
-                    raise ValueError("Invalid screensize")
+                if fov <= 0:
+                    raise ValueError("Invalid fov")
 
                 self.monitor_index = monitor_index
                 self.target_ip = ip
-                self.screensize = screensize
-                return  # valid, keep
+                self.fov = fov
+                return self.monitor_index, self.target_ip, self.fov
 
             except Exception:
                 print("Corrupted set.txt, resetting...")
                 os.remove(self.save_path)
 
-        self.run()  # ask again if missing or corrupted
+        self.run()
+        return self.monitor_index, self.target_ip, self.fov
 
     def run(self):
         self.get_monitor_index()
         self.get_target_ip()
-        self.get_screensize()
+        self.get_fov()
         self.save_settings()
+
 
 def load_or_prompt_frame():
     frame_path = r"C:\frame.txt"
@@ -231,8 +244,10 @@ def load_or_prompt_frame():
     print("Frame choice saved to C:\\frame.txt")
     return choice
 
-SettingsCollector().load_or_prompt()
-load_or_prompt_frame()
+
+settings = SettingsCollector().load_or_prompt()
+frame_choice = load_or_prompt_frame()
+
 
 try:
     subprocess.Popen(['start', 'cmd', '/c', batch_file_path], shell=True)
