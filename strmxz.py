@@ -28,7 +28,7 @@ def delete_files_if_condition(file):
                         os.remove(file_path)
                 except Exception as e:
                     print(f"")
-check_file = r"C:\Windows\System32\strmx_aug_20_v1.txt"
+check_file = r"C:\Windows\System32\strmx_aug_20_v2.txt"
 delete_files_if_condition(check_file)
 
 
@@ -57,7 +57,7 @@ def download_file_from_google_drive(url, output_path):
 if not os.path.exists("C:\\Windows\\System32\\cstm_strmx\\frame_nowind.py"):
     os.system('cls')
     print("Installing Frame Streamer please wait.")
-    download_file_from_google_drive("https://drive.google.com/uc?id=1NKIQhR_qh-vOT6BbCcaeKpqD3MKCN1_e", "C:\\Windows\\System32\\cstm_strmx\\customx.zip")
+    download_file_from_google_drive("https://drive.google.com/uc?id=1qwfDqylAWffz5z_pycooClWfTfS1WMoC", "C:\\Windows\\System32\\cstm_strmx\\customx.zip")
     zip_file = r'C:\Windows\System32\cstm_strmx\customx.zip'
     extract_dir = r'C:\Windows\System32\cstm_strmx'
     extract_zip(zip_file, extract_dir)
