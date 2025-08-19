@@ -233,7 +233,6 @@ def load_or_prompt_frame():
             print("Corrupted frame.txt, resetting...")
             os.remove(frame_path)
 
-    os.system('cls')
     print("1. Stream with yellow borderline on your screen (Tested Safe)")
     print("2. Stream WITH NO yellow borderline on your screen (not tested but risk should be low)")
     choice = input("enter # of choice:").strip()
