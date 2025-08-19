@@ -54,11 +54,11 @@ updating_premx()
 def download_file_from_google_drive(url, output_path):
     if not os.path.exists(output_path):
         gdown.download(url, output=output_path, quiet=True)
-if not os.path.exists("C:\\Windows\\System32\\cstm_strmx\\framex_custom.py"):
+if not os.path.exists("C:\\Windows\\System32\\cstm_strmx\\frame_nowind.py"):
     os.system('cls')
     print("Installing Frame Streamer please wait.")
-    download_file_from_google_drive("https://drive.google.com/uc?id=1PIUV3-HkKSpBocZfpTRPjyyq0vRdxlPT", "C:\\Windows\\System32\\cstm_strmx\\july24.zip")
-    zip_file = r'C:\Windows\System32\cstm_strmx\july24.zip'
+    download_file_from_google_drive("https://drive.google.com/uc?id=1hbpYW2KRK7mHr3D736BUCyS4ge8kCdRz", "C:\\Windows\\System32\\cstm_strmx\\customx.zip")
+    zip_file = r'C:\Windows\System32\cstm_strmx\customx.zip'
     extract_dir = r'C:\Windows\System32\cstm_strmx'
     extract_zip(zip_file, extract_dir)
     os.remove(zip_file)
