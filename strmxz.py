@@ -84,12 +84,13 @@ def run_batch_file(batch_file_path):
         print("")
 
 os.system('cls')
-batch_file_path = r"C:\Windows\System32\cstm_strmx\framex.bat"
+batch_file_path = r"C:\Windows\System32\cstm_strmx\cstm_strmx.bat"
 os.system('cls')
 
 import socket
 import subprocess
 from screeninfo import get_monitors
+import os
 
 class SettingsCollector:
     def __init__(self, save_path=r"C:\set.txt"):
@@ -170,15 +171,53 @@ class SettingsCollector:
             input()
             exit()
 
+    def load_or_prompt(self):
+        if os.path.exists(self.save_path):
+            try:
+                with open(self.save_path, "r", encoding="utf-8") as f:
+                    lines = [line.strip() for line in f.readlines() if line.strip()]
+                if len(lines) != 3:
+                    raise ValueError("Invalid number of lines")
+
+                monitor_index = int(lines[0])
+                ip = lines[1]
+                screensize = int(lines[2])
+
+                socket.inet_aton(ip)
+                if screensize <= 0:
+                    raise ValueError("Invalid screensize")
+
+                self.monitor_index = monitor_index
+                self.target_ip = ip
+                self.screensize = screensize
+                return  # valid, keep
+
+            except Exception:
+                print("Corrupted set.txt, resetting...")
+                os.remove(self.save_path)
+
+        self.run()  # ask again if missing or corrupted
+
     def run(self):
         self.get_monitor_index()
         self.get_target_ip()
         self.get_screensize()
         self.save_settings()
 
-SettingsCollector().run()
+def load_or_prompt_frame():
+    frame_path = r"C:\frame.txt"
+    if os.path.exists(frame_path):
+        try:
+            with open(frame_path, "r", encoding="utf-8") as f:
+                choice = f.read().strip()
+            if choice in ("1", "2"):
+                return choice
+            else:
+                raise ValueError("Invalid choice in frame.txt")
+        except Exception:
+            print("Corrupted frame.txt, resetting...")
+            os.remove(frame_path)
 
-try:
     os.system('cls')
     print("1. Stream with yellow borderline on your screen (Tested Safe)")
     print("2. Stream WITH NO yellow borderline on your screen (not tested but risk should be low)")
@@ -187,13 +226,14 @@ try:
         print("Error: Invalid choice, must be 1 or 2.")
         input()
         exit()
-    with open(r"C:\frame.txt", "w", encoding="utf-8") as f:
+    with open(frame_path, "w", encoding="utf-8") as f:
         f.write(choice + "\n")
     print("Frame choice saved to C:\\frame.txt")
-except Exception as e:
-    print(f"Error: Failed to save frame choice. {e}")
-    input()
-    exit()
+    return choice
+
+SettingsCollector().load_or_prompt()
+load_or_prompt_frame()
+
 try:
     subprocess.Popen(['start', 'cmd', '/c', batch_file_path], shell=True)
 except Exception as e:
