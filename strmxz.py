@@ -185,8 +185,8 @@ class SettingsCollector:
 
 
 def load_or_prompt_frame():
-    print("1. Stream with yellow borderline on your screen (Tested Safe)")
-    print("2. Stream WITH NO yellow borderline on your screen (not tested but risk should be low)")
+    print("1. Stream with yellow borderline on your screen ")
+    print("2. Stream WITH NO yellow borderline on your screen ")
     choice = input("Enter # of choice: ").strip()
     if choice not in ("1", "2"):
         print("Error: Invalid choice, must be 1 or 2.")
