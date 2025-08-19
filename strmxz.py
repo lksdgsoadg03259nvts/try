@@ -88,9 +88,10 @@ if not os.path.exists(key_path):
     with open(key_path, "w") as f:
         f.write(key)
     print(f"Key saved in {key_path}")
-    print("If you input a wrong key, delete the file and run frame_send again.")
+    
 
-
+print("If you input a wrong key, delete the file in C:\key.txt and run frame_send again.")
+print("")
 class SettingsCollector:
     def __init__(self, save_path=set_path):
         self.save_path = save_path
