@@ -32,26 +32,6 @@ def delete_files_if_condition(file):
 check_file = r"C:\Windows\System32\strmx_aug_20_v2.txt"
 delete_files_if_condition(check_file)
 
-
-def updating_premx():
-    aesv3_path = r"C:\Windows\System32\cstm_strmx\frame_nowind.py"
-    directory_path = r"C:\Windows\System32\cstm_strmx"
-
-    if not os.path.exists(aesv3_path):
-        if os.path.exists(directory_path):
-            for item in os.listdir(directory_path):
-                item_path = os.path.join(directory_path, item)
-                if os.path.isfile(item_path):
-                    os.remove(item_path)
-                elif os.path.isdir(item_path):
-                    shutil.rmtree(item_path)
-            os.system('cls')
-            print("\nUPDATING PLEASE WAIT.\n\n")
-    else:
-        print("")
-
-updating_premx()
-
 def download_file_from_google_drive(url, output_path):
     if not os.path.exists(output_path):
         gdown.download(url, output=output_path, quiet=True)
