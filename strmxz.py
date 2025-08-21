@@ -189,7 +189,7 @@ def load_or_prompt_frame():
     while True:
         print("1. Stream with yellow borderline on your screen")
         print("2. Stream WITH NO yellow borderline on your screen")
-        choice = input("Enter # of choice: ").strip()
+        choice = "1"
         if choice in ("1", "2"):
             with open(frame_path, "w", encoding="utf-8") as f:
                 f.write(choice + "\n")
